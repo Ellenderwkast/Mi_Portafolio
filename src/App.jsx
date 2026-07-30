@@ -183,8 +183,7 @@ function ProjectCard({ project }) {
         <div className="viewer-footer">
           <div className="viewer-slide-copy">
             <strong>{currentSlide.title}</strong>
-            <span>{currentSlide.hint}</span>
-            <small>{project.outcome}</small>
+            <p>{currentSlide.explanation}</p>
           </div>
 
           <div className="viewer-dots" aria-label={`Progreso del proyecto ${project.title}`}>
@@ -274,7 +273,6 @@ function App() {
           <img className="brand-avatar" src={catalog.profileImage} alt="Marca Ellender Dev" />
           <span className="brand-copy">
             <strong>Ellender Dev</strong>
-            <small>Linux product portfolio</small>
           </span>
         </a>
 

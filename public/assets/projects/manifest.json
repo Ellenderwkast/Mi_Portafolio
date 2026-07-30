@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T19:58:14.393Z",
+  "generatedAt": "2026-07-30T21:40:07.627Z",
   "profileImage": "/assets/profile/mi-imagen.jpeg",
   "projects": [
     {
@@ -19,7 +19,7 @@
         "Pagos integrados",
         "Panel de pedidos"
       ],
-      "liveUrl": "https://github.com/Ellenderwkast",
+      "liveUrl": "https://www.karellpremium.com.co",
       "preferredOrder": [
         "inicio",
         "todos los productos",
@@ -37,136 +37,119 @@
         {
           "id": "ecomerce-1",
           "title": "Inicio",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Pantalla de bienvenida para empezar el recorrido.",
+          "explanation": "Vista de inicio pensada para ubicar al usuario desde el primer momento.",
           "src": "/assets/projects/ecomerce/01-inicio.png",
           "frame": "desktop"
         },
         {
           "id": "ecomerce-2",
           "title": "Todos los productos",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Control de productos y disponibilidad de inventario.",
+          "explanation": "Panel de productos donde se administra catalogo, stock y disponibilidad.",
           "src": "/assets/projects/ecomerce/02-todos-los-productos.png",
           "frame": "desktop"
         },
         {
           "id": "ecomerce-3",
           "title": "Carrito",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Resumen de compra antes de finalizar.",
+          "explanation": "Carrito de compra para revisar productos antes de confirmar el pedido.",
           "src": "/assets/projects/ecomerce/03-carrito.png",
           "frame": "desktop"
         },
         {
           "id": "ecomerce-4",
           "title": "Checkout integracion con transportadora",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Confirmacion de compra en un flujo corto.",
+          "explanation": "Checkout final para confirmar datos y completar la compra en pocos pasos.",
           "src": "/assets/projects/ecomerce/04-checkout-integracion-con-transportadora.png",
           "frame": "desktop"
         },
         {
           "id": "ecomerce-5",
           "title": "Metodos de pago pasarela wompi",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Flujo de pagos mas claro y confiable.",
+          "explanation": "Flujo de pago guiado para cobrar de forma clara y sin friccion.",
           "src": "/assets/projects/ecomerce/05-metodos-de-pago-pasarela-wompi.png",
           "frame": "desktop"
         },
         {
           "id": "ecomerce-6",
           "title": "Pasarella de pago wompi",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Flujo de pagos mas claro y confiable.",
+          "explanation": "Flujo de pago guiado para cobrar de forma clara y sin friccion.",
           "src": "/assets/projects/ecomerce/06-pasarella-de-pago-wompi.png",
           "frame": "desktop"
         },
         {
           "id": "ecomerce-7",
           "title": "Comfirmacion de metodo de pago nequi",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Flujo de pagos mas claro y confiable.",
+          "explanation": "Flujo de pago guiado para cobrar de forma clara y sin friccion.",
           "src": "/assets/projects/ecomerce/07-comfirmacion-de-metodo-de-pago-nequi.png",
           "frame": "desktop"
         },
         {
           "id": "ecomerce-8",
           "title": "Metodo de pago nequi",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Flujo de pagos mas claro y confiable.",
+          "explanation": "Flujo de pago guiado para cobrar de forma clara y sin friccion.",
           "src": "/assets/projects/ecomerce/08-metodo-de-pago-nequi.png",
           "frame": "desktop"
         },
         {
           "id": "ecomerce-9",
           "title": "Panel admin Dashboard",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Resumen del estado general para tomar decisiones rapidas.",
+          "explanation": "Dashboard general para revisar indicadores y estado del negocio.",
           "src": "/assets/projects/ecomerce/09-panel-admin-dashboard.png",
           "frame": "desktop"
         },
         {
           "id": "ecomerce-10",
           "title": "Panel admin Productos",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Control de productos y disponibilidad de inventario.",
+          "explanation": "Panel de productos donde se administra catalogo, stock y disponibilidad.",
           "src": "/assets/projects/ecomerce/10-panel-admin-productos.png",
           "frame": "desktop"
         },
         {
           "id": "ecomerce-11",
           "title": "Panel admin Gestion de pedidos",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Seguimiento de pedidos en cada etapa.",
+          "explanation": "Gestion de pedidos para visualizar estados y dar seguimiento a entregas.",
           "src": "/assets/projects/ecomerce/11-panel-admin-gestion-de-pedidos.png",
           "frame": "desktop"
         },
         {
           "id": "ecomerce-12",
           "title": "Panel admin Gestion de envio Transportadora",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Panel de administracion para operar todo el producto.",
+          "explanation": "Panel de admin donde el administrador tiene mayor gestion de la aplicacion.",
           "src": "/assets/projects/ecomerce/12-panel-admin-gestion-de-envio-transportadora.png",
           "frame": "desktop"
         },
         {
           "id": "ecomerce-13",
           "title": "Panel admin Despacho solicitar recogida",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Panel de administracion para operar todo el producto.",
+          "explanation": "Panel de admin donde el administrador tiene mayor gestion de la aplicacion.",
           "src": "/assets/projects/ecomerce/13-panel-admin-despacho-solicitar-recogida.png",
           "frame": "desktop"
         },
         {
           "id": "ecomerce-14",
           "title": "Panel admin Historial de registro",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Panel de administracion para operar todo el producto.",
+          "explanation": "Panel de admin donde el administrador tiene mayor gestion de la aplicacion.",
           "src": "/assets/projects/ecomerce/14-panel-admin-historial-de-registro.png",
           "frame": "desktop"
         },
         {
           "id": "ecomerce-15",
           "title": "Panel admin Solicitudes producto agotado",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Panel de administracion para operar todo el producto.",
+          "explanation": "Panel de admin donde el administrador tiene mayor gestion de la aplicacion.",
           "src": "/assets/projects/ecomerce/15-panel-admin-solicitudes-producto-agotado.png",
           "frame": "desktop"
         },
         {
           "id": "ecomerce-16",
           "title": "Panel admin Usuarios",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Panel de administracion para operar todo el producto.",
+          "explanation": "Panel de admin donde el administrador tiene mayor gestion de la aplicacion.",
           "src": "/assets/projects/ecomerce/16-panel-admin-usuarios.png",
           "frame": "desktop"
         },
         {
           "id": "ecomerce-17",
           "title": "Panel admin Blog",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Panel de administracion para operar todo el producto.",
+          "explanation": "Panel de admin donde el administrador tiene mayor gestion de la aplicacion.",
           "src": "/assets/projects/ecomerce/17-panel-admin-blog.png",
           "frame": "desktop"
         }
@@ -189,7 +172,7 @@
         "Pedidos y pagos",
         "Panel admin"
       ],
-      "liveUrl": "https://github.com/Ellenderwkast",
+      "liveUrl": "https://play.google.com/store/apps/details?id=com.open1x.app&pcampaignid=web_share",
       "preferredOrder": [
         "home",
         "menu",
@@ -207,88 +190,77 @@
         {
           "id": "open-android-1",
           "title": "Home",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Vista principal con acceso directo a acciones clave.",
+          "explanation": "Pantalla principal con accesos directos a funciones clave del producto.",
           "src": "/assets/projects/open-android/01-home.png",
           "frame": "mobile"
         },
         {
           "id": "open-android-2",
           "title": "Menu",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Navegacion simple para encontrar funciones sin friccion.",
+          "explanation": "Menu principal para navegar modulos y llegar rapido a cada seccion.",
           "src": "/assets/projects/open-android/02-menu.png",
           "frame": "mobile"
         },
         {
           "id": "open-android-3",
           "title": "Chat",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Comunicacion integrada para coordinar en tiempo real.",
+          "explanation": "Chat integrado para coordinar solicitudes y resolver dudas en tiempo real.",
           "src": "/assets/projects/open-android/03-chat.png",
           "frame": "mobile"
         },
         {
           "id": "open-android-4",
           "title": "Gestion de productos",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Control de productos y disponibilidad de inventario.",
+          "explanation": "Panel de productos donde se administra catalogo, stock y disponibilidad.",
           "src": "/assets/projects/open-android/04-gestion-de-productos.png",
           "frame": "mobile"
         },
         {
           "id": "open-android-5",
           "title": "Gestion de pedidos",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Seguimiento de pedidos en cada etapa.",
+          "explanation": "Gestion de pedidos para visualizar estados y dar seguimiento a entregas.",
           "src": "/assets/projects/open-android/05-gestion-de-pedidos.png",
           "frame": "mobile"
         },
         {
           "id": "open-android-6",
           "title": "Gestion de pagos",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Flujo de pagos mas claro y confiable.",
+          "explanation": "Flujo de pago guiado para cobrar de forma clara y sin friccion.",
           "src": "/assets/projects/open-android/06-gestion-de-pagos.png",
           "frame": "mobile"
         },
         {
           "id": "open-android-7",
           "title": "Panel admin avanzado",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Panel de administracion para operar todo el producto.",
+          "explanation": "Panel de admin donde el administrador tiene mayor gestion de la aplicacion.",
           "src": "/assets/projects/open-android/07-panel-admin-avanzado.png",
           "frame": "mobile"
         },
         {
           "id": "open-android-8",
           "title": "Panel admin",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Panel de administracion para operar todo el producto.",
+          "explanation": "Panel de admin donde el administrador tiene mayor gestion de la aplicacion.",
           "src": "/assets/projects/open-android/08-panel-admin.png",
           "frame": "mobile"
         },
         {
           "id": "open-android-9",
           "title": "Cuenta de usuario",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Configuraciones y datos clave del usuario.",
+          "explanation": "Cuenta de usuario para editar perfil, datos y preferencias personales.",
           "src": "/assets/projects/open-android/09-cuenta-de-usuario.png",
           "frame": "mobile"
         },
         {
           "id": "open-android-10",
           "title": "Login",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Pantalla de acceso limpia para entrar rapido al sistema.",
+          "explanation": "Acceso seguro para entrar rapido a la aplicacion y continuar el flujo.",
           "src": "/assets/projects/open-android/10-login.png",
           "frame": "mobile"
         },
         {
           "id": "open-android-11",
           "title": "Aliado",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Vista real de Open servicios cerca de ti - Android para mostrar su experiencia en uso.",
+          "explanation": "Vista de Open servicios cerca de ti - Android con un paso clave del flujo principal de la aplicacion.",
           "src": "/assets/projects/open-android/11-aliado.png",
           "frame": "mobile"
         }
@@ -311,7 +283,7 @@
         "Gestion de pagos",
         "Panel admin"
       ],
-      "liveUrl": "https://github.com/Ellenderwkast",
+      "liveUrl": "https://apps.apple.com/co/app/open-servicios-cerca-de-ti/id6769672984?l=en-GB",
       "preferredOrder": [
         "home",
         "menu",
@@ -329,80 +301,70 @@
         {
           "id": "open-apple-1",
           "title": "Home",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Vista principal con acceso directo a acciones clave.",
+          "explanation": "Pantalla principal con accesos directos a funciones clave del producto.",
           "src": "/assets/projects/open-apple/01-home.png",
           "frame": "mobile"
         },
         {
           "id": "open-apple-2",
           "title": "Menu",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Navegacion simple para encontrar funciones sin friccion.",
+          "explanation": "Menu principal para navegar modulos y llegar rapido a cada seccion.",
           "src": "/assets/projects/open-apple/02-menu.png",
           "frame": "mobile"
         },
         {
           "id": "open-apple-3",
           "title": "Chat",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Comunicacion integrada para coordinar en tiempo real.",
+          "explanation": "Chat integrado para coordinar solicitudes y resolver dudas en tiempo real.",
           "src": "/assets/projects/open-apple/03-chat.jpeg",
           "frame": "mobile"
         },
         {
           "id": "open-apple-4",
           "title": "Gestion de productos",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Control de productos y disponibilidad de inventario.",
+          "explanation": "Panel de productos donde se administra catalogo, stock y disponibilidad.",
           "src": "/assets/projects/open-apple/04-gestion-de-productos.jpeg",
           "frame": "mobile"
         },
         {
           "id": "open-apple-5",
           "title": "Gestion de pedidos",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Seguimiento de pedidos en cada etapa.",
+          "explanation": "Gestion de pedidos para visualizar estados y dar seguimiento a entregas.",
           "src": "/assets/projects/open-apple/05-gestion-de-pedidos.jpeg",
           "frame": "mobile"
         },
         {
           "id": "open-apple-6",
           "title": "Gestion de pagos",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Flujo de pagos mas claro y confiable.",
+          "explanation": "Flujo de pago guiado para cobrar de forma clara y sin friccion.",
           "src": "/assets/projects/open-apple/06-gestion-de-pagos.jpeg",
           "frame": "mobile"
         },
         {
           "id": "open-apple-7",
           "title": "Panel admin avanzado",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Panel de administracion para operar todo el producto.",
+          "explanation": "Panel de admin donde el administrador tiene mayor gestion de la aplicacion.",
           "src": "/assets/projects/open-apple/07-panel-admin-avanzado.jpeg",
           "frame": "mobile"
         },
         {
           "id": "open-apple-8",
           "title": "Panel admin",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Panel de administracion para operar todo el producto.",
+          "explanation": "Panel de admin donde el administrador tiene mayor gestion de la aplicacion.",
           "src": "/assets/projects/open-apple/08-panel-admin.jpeg",
           "frame": "mobile"
         },
         {
           "id": "open-apple-9",
           "title": "Cuenta de usuario",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Configuraciones y datos clave del usuario.",
+          "explanation": "Cuenta de usuario para editar perfil, datos y preferencias personales.",
           "src": "/assets/projects/open-apple/09-cuenta-de-usuario.jpeg",
           "frame": "mobile"
         },
         {
           "id": "open-apple-10",
           "title": "Login",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Pantalla de acceso limpia para entrar rapido al sistema.",
+          "explanation": "Acceso seguro para entrar rapido a la aplicacion y continuar el flujo.",
           "src": "/assets/projects/open-apple/10-login.png",
           "frame": "mobile"
         }
@@ -425,7 +387,7 @@
         "Clientes y proveedores",
         "Reportes"
       ],
-      "liveUrl": "https://github.com/Ellenderwkast",
+      "liveUrl": "https://sistema-de-inventario-silk.vercel.app/",
       "preferredOrder": [
         "dashboard",
         "productos",
@@ -440,104 +402,91 @@
         {
           "id": "sistema-inventario-1",
           "title": "Modo claro Dashboard",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Resumen del estado general para tomar decisiones rapidas.",
+          "explanation": "Dashboard general para revisar indicadores y estado del negocio.",
           "src": "/assets/projects/sistema-inventario/01-modo-claro-dashboard.png",
           "frame": "desktop"
         },
         {
           "id": "sistema-inventario-2",
           "title": "Modo dark Dashboard",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Resumen del estado general para tomar decisiones rapidas.",
+          "explanation": "Dashboard general para revisar indicadores y estado del negocio.",
           "src": "/assets/projects/sistema-inventario/02-modo-dark-dashboard.png",
           "frame": "desktop"
         },
         {
           "id": "sistema-inventario-3",
           "title": "Modo claro productos",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Control de productos y disponibilidad de inventario.",
+          "explanation": "Panel de productos donde se administra catalogo, stock y disponibilidad.",
           "src": "/assets/projects/sistema-inventario/03-modo-claro-productos.png",
           "frame": "desktop"
         },
         {
           "id": "sistema-inventario-4",
           "title": "Modo dark Productos",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Control de productos y disponibilidad de inventario.",
+          "explanation": "Panel de productos donde se administra catalogo, stock y disponibilidad.",
           "src": "/assets/projects/sistema-inventario/04-modo-dark-productos.png",
           "frame": "desktop"
         },
         {
           "id": "sistema-inventario-5",
           "title": "Modo claro Clientes",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Gestion de clientes para mantener seguimiento activo.",
+          "explanation": "Modulo de clientes para registrar, consultar y gestionar su informacion.",
           "src": "/assets/projects/sistema-inventario/05-modo-claro-clientes.png",
           "frame": "desktop"
         },
         {
           "id": "sistema-inventario-6",
           "title": "Modo dark Clientes",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Gestion de clientes para mantener seguimiento activo.",
+          "explanation": "Modulo de clientes para registrar, consultar y gestionar su informacion.",
           "src": "/assets/projects/sistema-inventario/06-modo-dark-clientes.png",
           "frame": "desktop"
         },
         {
           "id": "sistema-inventario-7",
           "title": "Modo claro Proveedores",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Control de proveedores y abastecimiento.",
+          "explanation": "Gestion de proveedores para controlar abastecimiento y relacion comercial.",
           "src": "/assets/projects/sistema-inventario/07-modo-claro-proveedores.png",
           "frame": "desktop"
         },
         {
           "id": "sistema-inventario-8",
           "title": "Modo dark Proveedores",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Control de proveedores y abastecimiento.",
+          "explanation": "Gestion de proveedores para controlar abastecimiento y relacion comercial.",
           "src": "/assets/projects/sistema-inventario/08-modo-dark-proveedores.png",
           "frame": "desktop"
         },
         {
           "id": "sistema-inventario-9",
           "title": "Modo claro Remision",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Registro de movimientos de salida y entrada.",
+          "explanation": "Pantalla de remision para registrar salidas y trazabilidad de inventario.",
           "src": "/assets/projects/sistema-inventario/09-modo-claro-remision.png",
           "frame": "desktop"
         },
         {
           "id": "sistema-inventario-10",
           "title": "Modo dark Remision",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Registro de movimientos de salida y entrada.",
+          "explanation": "Pantalla de remision para registrar salidas y trazabilidad de inventario.",
           "src": "/assets/projects/sistema-inventario/10-modo-dark-remision.png",
           "frame": "desktop"
         },
         {
           "id": "sistema-inventario-11",
           "title": "Modo claro Reportes",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Reportes para seguimiento y decisiones.",
+          "explanation": "Reportes para analizar resultados y apoyar decisiones operativas.",
           "src": "/assets/projects/sistema-inventario/11-modo-claro-reportes.png",
           "frame": "desktop"
         },
         {
           "id": "sistema-inventario-12",
           "title": "Modo dark Reportes",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Reportes para seguimiento y decisiones.",
+          "explanation": "Reportes para analizar resultados y apoyar decisiones operativas.",
           "src": "/assets/projects/sistema-inventario/12-modo-dark-reportes.png",
           "frame": "desktop"
         },
         {
           "id": "sistema-inventario-13",
           "title": "imagen login",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Pantalla de acceso limpia para entrar rapido al sistema.",
+          "explanation": "Acceso seguro para entrar rapido a la aplicacion y continuar el flujo.",
           "src": "/assets/projects/sistema-inventario/13-imagen-login.png",
           "frame": "desktop"
         }
@@ -560,7 +509,7 @@
         "Chat",
         "Modo claro y oscuro"
       ],
-      "liveUrl": "https://github.com/Ellenderwkast",
+      "liveUrl": "https://play.google.com/store/apps/details?id=com.TumaGo.app&pcampaignid=web_share",
       "preferredOrder": [
         "modo claro",
         "recogida y destino",
@@ -576,80 +525,70 @@
         {
           "id": "tumago-android-1",
           "title": "Modo claro Recogida y destino",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Paso guiado para seleccionar origen y destino.",
+          "explanation": "Pantalla de recogida y destino para definir el viaje con precision.",
           "src": "/assets/projects/tumago-android/01-modo-claro-recogida-y-destino.png",
           "frame": "mobile"
         },
         {
           "id": "tumago-android-2",
           "title": "Modo claro Login",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Pantalla de acceso limpia para entrar rapido al sistema.",
+          "explanation": "Acceso seguro para entrar rapido a la aplicacion y continuar el flujo.",
           "src": "/assets/projects/tumago-android/02-modo-claro-login.png",
           "frame": "mobile"
         },
         {
           "id": "tumago-android-3",
           "title": "Modo dark Recogida y destino",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Paso guiado para seleccionar origen y destino.",
+          "explanation": "Pantalla de recogida y destino para definir el viaje con precision.",
           "src": "/assets/projects/tumago-android/03-modo-dark-recogida-y-destino.png",
           "frame": "mobile"
         },
         {
           "id": "tumago-android-4",
           "title": "Modo claro Mapa pide ahora",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Mapa en tiempo real para ubicacion y ruta.",
+          "explanation": "Mapa en tiempo real para ubicar rutas y disponibilidad del servicio.",
           "src": "/assets/projects/tumago-android/04-modo-claro-mapa-pide-ahora.png",
           "frame": "mobile"
         },
         {
           "id": "tumago-android-5",
           "title": "Modo dark Mapa pide ahora",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Mapa en tiempo real para ubicacion y ruta.",
+          "explanation": "Mapa en tiempo real para ubicar rutas y disponibilidad del servicio.",
           "src": "/assets/projects/tumago-android/05-modo-dark-mapa-pide-ahora.png",
           "frame": "mobile"
         },
         {
           "id": "tumago-android-6",
           "title": "Modo claro Sidebar",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Navegacion lateral para cambiar de seccion rapidamente.",
+          "explanation": "Barra lateral para moverse entre opciones sin salir del proceso activo.",
           "src": "/assets/projects/tumago-android/06-modo-claro-sidebar.png",
           "frame": "mobile"
         },
         {
           "id": "tumago-android-7",
           "title": "Modo dark Sidebar",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Navegacion lateral para cambiar de seccion rapidamente.",
+          "explanation": "Barra lateral para moverse entre opciones sin salir del proceso activo.",
           "src": "/assets/projects/tumago-android/07-modo-dark-sidebar.png",
           "frame": "mobile"
         },
         {
           "id": "tumago-android-8",
           "title": "Modo dark Login",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Pantalla de acceso limpia para entrar rapido al sistema.",
+          "explanation": "Acceso seguro para entrar rapido a la aplicacion y continuar el flujo.",
           "src": "/assets/projects/tumago-android/08-modo-dark-login.png",
           "frame": "mobile"
         },
         {
           "id": "tumago-android-9",
           "title": "Chat",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Comunicacion integrada para coordinar en tiempo real.",
+          "explanation": "Chat integrado para coordinar solicitudes y resolver dudas en tiempo real.",
           "src": "/assets/projects/tumago-android/09-chat.png",
           "frame": "mobile"
         },
         {
           "id": "tumago-android-10",
           "title": "Arranque",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Arranque visual del producto para orientar al usuario desde el inicio.",
+          "explanation": "Pantalla inicial de marca para comenzar la experiencia con contexto claro.",
           "src": "/assets/projects/tumago-android/10-arranque.png",
           "frame": "mobile"
         }
@@ -672,7 +611,7 @@
         "Chat",
         "Modo claro y oscuro"
       ],
-      "liveUrl": "https://github.com/Ellenderwkast",
+      "liveUrl": "https://apps.apple.com/co/app/tumago/id6786550336?l=en-GB",
       "preferredOrder": [
         "modo claro",
         "recogida y destino",
@@ -688,80 +627,70 @@
         {
           "id": "tumago-apple-1",
           "title": "Modo claro Recogida y destino",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Paso guiado para seleccionar origen y destino.",
+          "explanation": "Pantalla de recogida y destino para definir el viaje con precision.",
           "src": "/assets/projects/tumago-apple/01-modo-claro-recogida-y-destino.jpeg",
           "frame": "mobile"
         },
         {
           "id": "tumago-apple-2",
           "title": "Modo claro Login",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Pantalla de acceso limpia para entrar rapido al sistema.",
+          "explanation": "Acceso seguro para entrar rapido a la aplicacion y continuar el flujo.",
           "src": "/assets/projects/tumago-apple/02-modo-claro-login.png",
           "frame": "mobile"
         },
         {
           "id": "tumago-apple-3",
           "title": "Modo dark Recogida y destino",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Paso guiado para seleccionar origen y destino.",
+          "explanation": "Pantalla de recogida y destino para definir el viaje con precision.",
           "src": "/assets/projects/tumago-apple/03-modo-dark-recogida-y-destino.jpeg",
           "frame": "mobile"
         },
         {
           "id": "tumago-apple-4",
           "title": "Modo claro Mapa Pide ahora",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Mapa en tiempo real para ubicacion y ruta.",
+          "explanation": "Mapa en tiempo real para ubicar rutas y disponibilidad del servicio.",
           "src": "/assets/projects/tumago-apple/04-modo-claro-mapa-pide-ahora.jpeg",
           "frame": "mobile"
         },
         {
           "id": "tumago-apple-5",
           "title": "Modo dark Mapa Pide ahora",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Mapa en tiempo real para ubicacion y ruta.",
+          "explanation": "Mapa en tiempo real para ubicar rutas y disponibilidad del servicio.",
           "src": "/assets/projects/tumago-apple/05-modo-dark-mapa-pide-ahora.jpeg",
           "frame": "mobile"
         },
         {
           "id": "tumago-apple-6",
           "title": "Modo claro Sidebar",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Navegacion lateral para cambiar de seccion rapidamente.",
+          "explanation": "Barra lateral para moverse entre opciones sin salir del proceso activo.",
           "src": "/assets/projects/tumago-apple/06-modo-claro-sidebar.jpeg",
           "frame": "mobile"
         },
         {
           "id": "tumago-apple-7",
           "title": "Modo dark Sidebar",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Navegacion lateral para cambiar de seccion rapidamente.",
+          "explanation": "Barra lateral para moverse entre opciones sin salir del proceso activo.",
           "src": "/assets/projects/tumago-apple/07-modo-dark-sidebar.jpeg",
           "frame": "mobile"
         },
         {
           "id": "tumago-apple-8",
           "title": "Modo dark Login",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Pantalla de acceso limpia para entrar rapido al sistema.",
+          "explanation": "Acceso seguro para entrar rapido a la aplicacion y continuar el flujo.",
           "src": "/assets/projects/tumago-apple/08-modo-dark-login.png",
           "frame": "mobile"
         },
         {
           "id": "tumago-apple-9",
           "title": "Chat",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Comunicacion integrada para coordinar en tiempo real.",
+          "explanation": "Chat integrado para coordinar solicitudes y resolver dudas en tiempo real.",
           "src": "/assets/projects/tumago-apple/09-chat.jpeg",
           "frame": "mobile"
         },
         {
           "id": "tumago-apple-10",
           "title": "Arranque",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Arranque visual del producto para orientar al usuario desde el inicio.",
+          "explanation": "Pantalla inicial de marca para comenzar la experiencia con contexto claro.",
           "src": "/assets/projects/tumago-apple/10-arranque.png",
           "frame": "mobile"
         }
@@ -800,56 +729,49 @@
         {
           "id": "crm-gimnasio-1",
           "title": "Dahboard del gimnassio",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Resumen del estado general para tomar decisiones rapidas.",
+          "explanation": "Dashboard general para revisar indicadores y estado del negocio.",
           "src": "/assets/projects/crm-gimnasio/01-dahboard-del-gimnassio.png",
           "frame": "desktop"
         },
         {
           "id": "crm-gimnasio-2",
           "title": "Gestion de clientes",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Gestion de clientes para mantener seguimiento activo.",
+          "explanation": "Modulo de clientes para registrar, consultar y gestionar su informacion.",
           "src": "/assets/projects/crm-gimnasio/02-gestion-de-clientes.png",
           "frame": "desktop"
         },
         {
           "id": "crm-gimnasio-3",
           "title": "Membresias y planes",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Control de planes y vigencias de membresias.",
+          "explanation": "Gestion de membresias para controlar planes, vigencias y renovaciones.",
           "src": "/assets/projects/crm-gimnasio/03-membresias-y-planes.png",
           "frame": "desktop"
         },
         {
           "id": "crm-gimnasio-4",
           "title": "Pago y caja",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Flujo de pagos mas claro y confiable.",
+          "explanation": "Flujo de pago guiado para cobrar de forma clara y sin friccion.",
           "src": "/assets/projects/crm-gimnasio/04-pago-y-caja.png",
           "frame": "desktop"
         },
         {
           "id": "crm-gimnasio-5",
           "title": "Control de acceso",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Validacion de accesos y actividad diaria.",
+          "explanation": "Control de acceso para validar entradas y seguimiento de actividad.",
           "src": "/assets/projects/crm-gimnasio/05-control-de-acceso.png",
           "frame": "desktop"
         },
         {
           "id": "crm-gimnasio-6",
           "title": "Comunicacion",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Canal de comunicacion dentro del sistema.",
+          "explanation": "Panel de comunicacion para mantener avisos y mensajes centralizados.",
           "src": "/assets/projects/crm-gimnasio/06-comunicacion.png",
           "frame": "desktop"
         },
         {
           "id": "crm-gimnasio-7",
           "title": "Login",
-          "hint": "Desliza o usa flechas para seguir.",
-          "explanation": "Pantalla de acceso limpia para entrar rapido al sistema.",
+          "explanation": "Acceso seguro para entrar rapido a la aplicacion y continuar el flujo.",
           "src": "/assets/projects/crm-gimnasio/07-login.png",
           "frame": "desktop"
         }

@@ -20,7 +20,7 @@ const PROJECTS_CONFIG = {
     summary: 'Tienda enfocada en conversion y administracion clara de pedidos.',
     outcome: 'Flujo de compra mas claro y gestion comercial ordenada.',
     highlights: ['Catalogo visual', 'Carrito y checkout', 'Pagos integrados', 'Panel de pedidos'],
-    liveUrl: 'https://github.com/Ellenderwkast',
+    liveUrl: 'https://www.karellpremium.com.co',
     preferredOrder: [
       'inicio',
       'todos los productos',
@@ -46,7 +46,7 @@ const PROJECTS_CONFIG = {
     summary: 'Marketplace local para descubrir, pedir y pagar servicios.',
     outcome: 'Experiencia de uso directa para compra y coordinacion.',
     highlights: ['Home por categorias', 'Chat con aliados', 'Pedidos y pagos', 'Panel admin'],
-    liveUrl: 'https://github.com/Ellenderwkast',
+    liveUrl: 'https://play.google.com/store/apps/details?id=com.open1x.app&pcampaignid=web_share',
     preferredOrder: ['home', 'menu', 'chat', 'gestion de productos', 'gestion de pedidos', 'gestion de pagos', 'panel admin avanzado', 'panel admin', 'cuenta de usuario', 'login'],
   },
   'Open servicios cerca de ti - Apple': {
@@ -61,7 +61,7 @@ const PROJECTS_CONFIG = {
     summary: 'Version iOS de Open con enfoque en fluidez y claridad.',
     outcome: 'Navegacion premium para uso diario.',
     highlights: ['Home y menu', 'Chat fluido', 'Gestion de pagos', 'Panel admin'],
-    liveUrl: 'https://github.com/Ellenderwkast',
+    liveUrl: 'https://apps.apple.com/co/app/open-servicios-cerca-de-ti/id6769672984?l=en-GB',
     preferredOrder: ['home', 'menu', 'chat', 'gestion de productos', 'gestion de pedidos', 'gestion de pagos', 'panel admin avanzado', 'panel admin', 'cuenta de usuario', 'login'],
   },
   'Sistema de inventario': {
@@ -76,7 +76,7 @@ const PROJECTS_CONFIG = {
     summary: 'Herramienta para stock, clientes y proveedores.',
     outcome: 'Operacion comercial mas estable y visible.',
     highlights: ['Dashboard', 'Productos y stock', 'Clientes y proveedores', 'Reportes'],
-    liveUrl: 'https://github.com/Ellenderwkast',
+    liveUrl: 'https://sistema-de-inventario-silk.vercel.app/',
     preferredOrder: ['dashboard', 'productos', 'clientes', 'proveedores', 'remision', 'reportes', 'login'],
   },
   'TumaGo - Android': {
@@ -91,7 +91,7 @@ const PROJECTS_CONFIG = {
     summary: 'App para pedir transporte con flujo guiado.',
     outcome: 'Viajes mas claros desde el primer paso.',
     highlights: ['Mapa en vivo', 'Recogida y destino', 'Chat', 'Modo claro y oscuro'],
-    liveUrl: 'https://github.com/Ellenderwkast',
+    liveUrl: 'https://play.google.com/store/apps/details?id=com.TumaGo.app&pcampaignid=web_share',
     preferredOrder: ['modo claro', 'recogida y destino', 'mapa', 'modo oscuro', 'chat', 'sidebar', 'login', 'arranque'],
   },
   'TumaGo -Apple': {
@@ -106,7 +106,7 @@ const PROJECTS_CONFIG = {
     summary: 'Version iOS de TumaGo para movilidad urbana.',
     outcome: 'Experiencia agil para trayectos frecuentes.',
     highlights: ['Mapa en vivo', 'Destino guiado', 'Chat', 'Modo claro y oscuro'],
-    liveUrl: 'https://github.com/Ellenderwkast',
+    liveUrl: 'https://apps.apple.com/co/app/tumago/id6786550336?l=en-GB',
     preferredOrder: ['modo claro', 'recogida y destino', 'mapa', 'modo oscuro', 'chat', 'sidebar', 'login', 'arranque'],
   },
   'CRM Gimnassio': {
@@ -138,35 +138,35 @@ const PROJECT_ORDER = [
 
 const IMAGE_EXTENSIONS = new Set(['.png', '.jpg', '.jpeg', '.webp']);
 const explanationMap = [
-  ['login', 'Pantalla de acceso limpia para entrar rapido al sistema.'],
-  ['arranque', 'Arranque visual del producto para orientar al usuario desde el inicio.'],
-  ['home', 'Vista principal con acceso directo a acciones clave.'],
-  ['inicio', 'Pantalla de bienvenida para empezar el recorrido.'],
-  ['menu', 'Navegacion simple para encontrar funciones sin friccion.'],
-  ['sidebar', 'Navegacion lateral para cambiar de seccion rapidamente.'],
-  ['chat', 'Comunicacion integrada para coordinar en tiempo real.'],
-  ['dashboard', 'Resumen del estado general para tomar decisiones rapidas.'],
-  ['dahboard', 'Resumen del estado general para tomar decisiones rapidas.'],
-  ['clientes', 'Gestion de clientes para mantener seguimiento activo.'],
-  ['membresias', 'Control de planes y vigencias de membresias.'],
-  ['control de acceso', 'Validacion de accesos y actividad diaria.'],
-  ['comunicacion', 'Canal de comunicacion dentro del sistema.'],
-  ['pago', 'Flujo de pagos mas claro y confiable.'],
-  ['caja', 'Control de movimientos en caja con trazabilidad.'],
-  ['productos', 'Control de productos y disponibilidad de inventario.'],
-  ['pedidos', 'Seguimiento de pedidos en cada etapa.'],
-  ['pagos', 'Gestion de pagos integrados dentro del flujo.'],
-  ['panel admin', 'Panel de administracion para operar todo el producto.'],
-  ['cuenta de usuario', 'Configuraciones y datos clave del usuario.'],
-  ['mapa', 'Mapa en tiempo real para ubicacion y ruta.'],
-  ['recogida y destino', 'Paso guiado para seleccionar origen y destino.'],
-  ['carrito', 'Resumen de compra antes de finalizar.'],
-  ['checkout', 'Confirmacion de compra en un flujo corto.'],
-  ['wompi', 'Pago integrado con experiencia de confianza.'],
-  ['nequi', 'Metodo de pago familiar para completar la compra.'],
-  ['reportes', 'Reportes para seguimiento y decisiones.'],
-  ['proveedores', 'Control de proveedores y abastecimiento.'],
-  ['remision', 'Registro de movimientos de salida y entrada.'],
+  ['login', 'Acceso seguro para entrar rapido a la aplicacion y continuar el flujo.'],
+  ['arranque', 'Pantalla inicial de marca para comenzar la experiencia con contexto claro.'],
+  ['home', 'Pantalla principal con accesos directos a funciones clave del producto.'],
+  ['inicio', 'Vista de inicio pensada para ubicar al usuario desde el primer momento.'],
+  ['menu', 'Menu principal para navegar modulos y llegar rapido a cada seccion.'],
+  ['sidebar', 'Barra lateral para moverse entre opciones sin salir del proceso activo.'],
+  ['chat', 'Chat integrado para coordinar solicitudes y resolver dudas en tiempo real.'],
+  ['dashboard', 'Dashboard general para revisar indicadores y estado del negocio.'],
+  ['dahboard', 'Dashboard general para revisar indicadores y estado del negocio.'],
+  ['clientes', 'Modulo de clientes para registrar, consultar y gestionar su informacion.'],
+  ['membresias', 'Gestion de membresias para controlar planes, vigencias y renovaciones.'],
+  ['control de acceso', 'Control de acceso para validar entradas y seguimiento de actividad.'],
+  ['comunicacion', 'Panel de comunicacion para mantener avisos y mensajes centralizados.'],
+  ['pago', 'Flujo de pago guiado para cobrar de forma clara y sin friccion.'],
+  ['caja', 'Modulo de caja para registrar movimientos y mantener control financiero.'],
+  ['productos', 'Panel de productos donde se administra catalogo, stock y disponibilidad.'],
+  ['pedidos', 'Gestion de pedidos para visualizar estados y dar seguimiento a entregas.'],
+  ['pagos', 'Seccion de pagos para controlar transacciones dentro de la plataforma.'],
+  ['panel admin', 'Panel de admin donde el administrador tiene mayor gestion de la aplicacion.'],
+  ['cuenta de usuario', 'Cuenta de usuario para editar perfil, datos y preferencias personales.'],
+  ['mapa', 'Mapa en tiempo real para ubicar rutas y disponibilidad del servicio.'],
+  ['recogida y destino', 'Pantalla de recogida y destino para definir el viaje con precision.'],
+  ['carrito', 'Carrito de compra para revisar productos antes de confirmar el pedido.'],
+  ['checkout', 'Checkout final para confirmar datos y completar la compra en pocos pasos.'],
+  ['wompi', 'Integracion Wompi para pagos rapidos con validacion del proceso.'],
+  ['nequi', 'Pago con Nequi para finalizar compras de forma simple y conocida.'],
+  ['reportes', 'Reportes para analizar resultados y apoyar decisiones operativas.'],
+  ['proveedores', 'Gestion de proveedores para controlar abastecimiento y relacion comercial.'],
+  ['remision', 'Pantalla de remision para registrar salidas y trazabilidad de inventario.'],
 ];
 
 function slugify(value) {
@@ -195,7 +195,7 @@ function explainSlide(label, projectTitle) {
     }
   }
 
-  return `Vista real de ${projectTitle} para mostrar su experiencia en uso.`;
+  return `Vista de ${projectTitle} con un paso clave del flujo principal de la aplicacion.`;
 }
 
 function sortByPriority(files, preferredOrder) {
@@ -296,7 +296,6 @@ function buildProject(folderName) {
     return {
       id: `${config.id}-${index + 1}`,
       title,
-      hint: 'Desliza o usa flechas para seguir.',
       explanation: explainSlide(title, config.title),
       src: publicPath,
       frame: config.frame,
