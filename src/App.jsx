@@ -32,18 +32,18 @@ const filters = [
 const studioNotes = [
   {
     icon: BriefcaseBusiness,
-    title: 'Productos que se entienden rapido',
-    description: 'Cada vista busca que cualquier persona capte el valor del proyecto sin leer lenguaje tecnico.',
+    title: 'Claridad visual',
+    description: 'Cada producto se entiende rapido.',
   },
   {
     icon: MonitorSmartphone,
-    title: 'Presentacion real, no maquillaje',
-    description: 'El portafolio muestra pantallas reales y explica que siente el usuario en cada flujo importante.',
+    title: 'Pantallas reales',
+    description: 'Sin renders falsos ni decoracion innecesaria.',
   },
   {
     icon: Layers3,
-    title: 'Diseno adaptable al formato',
-    description: 'Los visores cambian para web o mobile, asi cada imagen respira bien sin importar su proporcion.',
+    title: 'Formato correcto',
+    description: 'Web y mobile con marcos distintos.',
   },
 ];
 
@@ -112,7 +112,6 @@ function ProjectCard({ project }) {
         </div>
 
         <p className="project-summary">{project.summary}</p>
-        <p className="project-audience">{project.audience}</p>
 
         <div className="project-story-box">
           <span className="story-label">Lo que esta viendo la persona</span>
@@ -121,15 +120,14 @@ function ProjectCard({ project }) {
         </div>
 
         <div className="project-highlights">
-          {project.highlights.map((highlight) => (
+          {project.highlights.slice(0, 3).map((highlight) => (
             <span key={highlight}>{highlight}</span>
           ))}
         </div>
 
         <div className="project-outcome">
-          <span>Por que este proyecto importa</span>
+          <span>Valor</span>
           <p>{project.outcome}</p>
-          <p>{project.promise}</p>
         </div>
       </div>
 
@@ -306,11 +304,10 @@ function App() {
               Diseno de productos que se sienten reales
             </span>
 
-            <h1>Productos web y moviles pensados para vender mejor, organizar procesos y verse realmente profesionales.</h1>
+            <h1>Proyectos web y mobile con una presentacion mas limpia y directa.</h1>
 
             <p className="hero-description">
-              Soy Ellender Dev. Aqui no solo se ve codigo: se ve como cada proyecto ayuda a una persona a comprar,
-              reservar, administrar o tomar decisiones sin sentirse perdida dentro del sistema.
+              Portafolio visual de productos reales hechos para negocio.
             </p>
 
             <div className="hero-actions">
@@ -341,21 +338,18 @@ function App() {
               </div>
               <div className="identity-notes">
                 <span>Ellender Dev</span>
-                <strong>Interfaces reales para negocios que necesitan verse mas serios y vender mejor.</strong>
-                <p>
-                  Proyectos de fitness, ecommerce, transporte, servicios locales e inventario mostrados con sus pantallas verdaderas.
-                </p>
+                <strong>Interfaces reales para marcas que quieren verse mejor.</strong>
               </div>
             </article>
 
             <div className="hero-floating-card">
               <span>Recorrido guiado</span>
-              <p>Cada proyecto explica la imagen actual para que cualquiera entienda que esta pasando en pantalla.</p>
+              <p>Una vista a la vez.</p>
             </div>
 
             <div className="hero-floating-card secondary">
               <MapPinned size={18} />
-              <p>Visores especiales para pantallas mobile largas y sistemas web panoramicos.</p>
+              <p>Web y mobile bien encuadrados.</p>
             </div>
           </div>
         </section>
@@ -363,7 +357,7 @@ function App() {
         <section className="section studio-section" id="estudio">
           <div className="section-heading compact">
             <span className="eyebrow">Como se presenta el trabajo</span>
-            <h2>Un portafolio mas limpio y elegante, donde el producto pesa mas que los textos.</h2>
+            <h2>Menos texto, mas producto.</h2>
           </div>
 
           <div className="studio-grid">
@@ -386,10 +380,7 @@ function App() {
         <section className="section" id="proyectos">
           <div className="section-heading">
             <span className="eyebrow">Proyectos realizados</span>
-            <h2>Siete productos mostrados uno por uno, con recorrido visual y contexto claro.</h2>
-            <p>
-              Cada proyecto avanza pantalla por pantalla con una presentacion mas sobria y guiada.
-            </p>
+            <h2>Siete productos mostrados uno por uno.</h2>
           </div>
 
           <div className="filter-row" role="tablist" aria-label="Filtrar proyectos">
@@ -417,28 +408,13 @@ function App() {
           </div>
         </section>
 
-        <section className="section narrative-section">
-          <div className="narrative-panel">
-            <div>
-              <span className="eyebrow">Lo que diferencia esta version</span>
-              <h2>Menos volumen, mas criterio visual y mas contexto para quien mira.</h2>
-            </div>
-
-            <div className="narrative-list">
-              <p>Los textos ahora son mas compactos para que el ojo vaya primero al producto y no a bloques enormes.</p>
-              <p>Cada proyecto muestra lo que vive el usuario en pantalla: comprar, gestionar, pedir un viaje o controlar una operacion.</p>
-              <p>Las interfaces largas de Android y Apple se presentan dentro de un visor tipo dispositivo, mientras que los sistemas web usan un escenario panoramico.</p>
-            </div>
-          </div>
-        </section>
-
         <section className="section contact-section" id="contacto">
           <div className="contact-card">
             <div>
               <span className="eyebrow">Contacto directo</span>
-              <h2>Si quieres mostrar tu negocio con una experiencia igual de clara y elegante, conversemos.</h2>
+              <h2>Si quieres una interfaz asi para tu negocio, conversemos.</h2>
               <p>
-                Desarrollo experiencias web, apps moviles y sistemas de gestion con una presentacion cuidada y pensada para personas reales.
+                Desarrollo web, mobile y sistemas de gestion.
               </p>
             </div>
 
