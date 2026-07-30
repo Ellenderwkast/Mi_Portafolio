@@ -110,6 +110,7 @@ function ProjectCard({ project }) {
         </div>
 
         <p className="project-summary">{project.summary}</p>
+        <p className="project-audience">{project.audience}</p>
 
         <div className="project-story-box">
           <span className="story-label">Lo que esta viendo la persona</span>
@@ -126,6 +127,7 @@ function ProjectCard({ project }) {
         <div className="project-outcome">
           <span>Por que este proyecto importa</span>
           <p>{project.outcome}</p>
+          <p>{project.promise}</p>
         </div>
       </div>
 

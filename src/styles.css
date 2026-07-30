@@ -278,6 +278,7 @@ img {
 .section-heading p,
 .studio-card p,
 .project-summary,
+.project-audience,
 .project-story-box p,
 .project-outcome p,
 .narrative-list p,
@@ -537,6 +538,11 @@ img {
   font-weight: 700;
 }
 
+.project-audience {
+  font-size: 0.93rem;
+  color: #4e463f;
+}
+
 .project-story-box,
 .project-outcome {
   padding: 16px 18px;
@@ -571,6 +577,10 @@ img {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+
+.project-outcome p + p {
+  margin-top: 8px;
 }
 
 .project-viewer {
