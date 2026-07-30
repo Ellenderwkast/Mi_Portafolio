@@ -1,16 +1,13 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+﻿import { useEffect, useMemo, useRef, useState } from 'react';
 import {
   ArrowLeft,
   ArrowRight,
-  BriefcaseBusiness,
+  ExternalLink,
   Github,
-  Layers3,
   Linkedin,
   Mail,
-  MapPinned,
-  MonitorSmartphone,
+  Play,
   Phone,
-  Sparkles,
 } from 'lucide-react';
 
 const contact = {
@@ -18,33 +15,15 @@ const contact = {
   whatsappLabel: '315 940 8253',
   email: 'ellenderdev@gmail.com',
   github: 'https://github.com/Ellenderwkast',
-  linkedin: 'https://www.linkedin.com/in/ellender-castillo-rincon-9b5552407/',
+  linkedin: 'https://www.linkedin.com/in/ellender-castillo-9b5552407?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
 };
 
 const filters = [
   { id: 'all', label: 'Todos' },
-  { id: 'gestion', label: 'Gestion y operacion' },
-  { id: 'venta', label: 'Venta digital' },
-  { id: 'apps', label: 'Apps y plataformas' },
-  { id: 'movilidad', label: 'Movilidad y reservas' },
-];
-
-const studioNotes = [
-  {
-    icon: BriefcaseBusiness,
-    title: 'Claridad visual',
-    description: 'Cada producto se entiende rapido.',
-  },
-  {
-    icon: MonitorSmartphone,
-    title: 'Pantallas reales',
-    description: 'Sin renders falsos ni decoracion innecesaria.',
-  },
-  {
-    icon: Layers3,
-    title: 'Formato correcto',
-    description: 'Web y mobile con marcos distintos.',
-  },
+  { id: 'gestion', label: 'Gestion' },
+  { id: 'venta', label: 'Venta' },
+  { id: 'apps', label: 'Apps' },
+  { id: 'movilidad', label: 'Movilidad' },
 ];
 
 const fallbackCatalog = {
@@ -55,16 +34,30 @@ const fallbackCatalog = {
 
 function ProjectCard({ project }) {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const touchStart = useRef(0);
   const touchEnd = useRef(0);
   const slides = project.slides ?? [];
-  const currentSlide = slides[activeSlide] ?? null;
-  const previousSlide = slides[(activeSlide - 1 + slides.length) % slides.length] ?? null;
-  const nextSlide = slides[(activeSlide + 1) % slides.length] ?? null;
 
   useEffect(() => {
     setActiveSlide(0);
   }, [project.id]);
+
+  useEffect(() => {
+    if (slides.length < 2 || isPaused) {
+      return undefined;
+    }
+
+    const id = setInterval(() => {
+      setActiveSlide((current) => (current === slides.length - 1 ? 0 : current + 1));
+    }, 4200);
+
+    return () => clearInterval(id);
+  }, [slides.length, isPaused]);
+
+  const currentSlide = slides[activeSlide] ?? null;
+  const previousSlide = slides[(activeSlide - 1 + slides.length) % slides.length] ?? null;
+  const nextSlide = slides[(activeSlide + 1) % slides.length] ?? null;
 
   const goToPrevious = () => {
     setActiveSlide((current) => (current === 0 ? slides.length - 1 : current - 1));
@@ -111,56 +104,48 @@ function ProjectCard({ project }) {
           <p className="project-tagline">{project.tagline}</p>
         </div>
 
-        <p className="project-summary">{project.summary}</p>
-
-        <div className="project-story-box">
-          <span className="story-label">Lo que esta viendo la persona</span>
-          <strong>{currentSlide.title}</strong>
-          <p>{currentSlide.explanation}</p>
-        </div>
-
         <div className="project-highlights">
           {project.highlights.slice(0, 3).map((highlight) => (
             <span key={highlight}>{highlight}</span>
           ))}
         </div>
 
-        <div className="project-outcome">
-          <span>Valor</span>
-          <p>{project.outcome}</p>
-        </div>
+        <a className="project-link" href={project.liveUrl} target="_blank" rel="noreferrer">
+          <ExternalLink size={16} />
+          Ver proyecto
+        </a>
       </div>
 
       <div className="project-viewer">
         <div className="viewer-topbar">
-          <div>
-            <span className="viewer-label">Galeria guiada</span>
-            <p>
-              {activeSlide + 1} / {slides.length}
-            </p>
-          </div>
-
-          <div className="viewer-nav">
-            <button type="button" className="viewer-arrow" onClick={goToPrevious} aria-label={`Ver imagen anterior de ${project.title}`}>
-              <ArrowLeft size={18} />
-            </button>
-            <button type="button" className="viewer-arrow" onClick={goToNext} aria-label={`Ver imagen siguiente de ${project.title}`}>
-              <ArrowRight size={18} />
-            </button>
-          </div>
+          <span className="viewer-label">{project.shortSummary}</span>
+          <p>
+            {activeSlide + 1} / {slides.length}
+          </p>
         </div>
 
         <div
           className={`viewer-stage viewer-stage--${project.frame}`}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
         >
+          <button
+            type="button"
+            className="viewer-arrow viewer-arrow--left"
+            onClick={goToPrevious}
+            aria-label={`Ver imagen anterior de ${project.title}`}
+          >
+            <ArrowLeft size={18} />
+          </button>
+
           {previousSlide ? (
             <button
               type="button"
               className={`frame-peek frame-peek--left frame-peek--${project.frame}`}
               onClick={goToPrevious}
-              aria-label={`Ir a la imagen anterior de ${project.title}`}
+              aria-label={`Vista previa anterior de ${project.title}`}
             >
               <div className={`frame-shell frame-shell--${project.frame}`}>
                 <img src={previousSlide.src} alt="" aria-hidden="true" />
@@ -177,31 +162,41 @@ function ProjectCard({ project }) {
               type="button"
               className={`frame-peek frame-peek--right frame-peek--${project.frame}`}
               onClick={goToNext}
-              aria-label={`Ir a la imagen siguiente de ${project.title}`}
+              aria-label={`Vista previa siguiente de ${project.title}`}
             >
               <div className={`frame-shell frame-shell--${project.frame}`}>
                 <img src={nextSlide.src} alt="" aria-hidden="true" />
               </div>
             </button>
           ) : null}
+
+          <button
+            type="button"
+            className="viewer-arrow viewer-arrow--right"
+            onClick={goToNext}
+            aria-label={`Ver imagen siguiente de ${project.title}`}
+          >
+            <ArrowRight size={18} />
+          </button>
         </div>
 
         <div className="viewer-footer">
           <div className="viewer-slide-copy">
             <strong>{currentSlide.title}</strong>
-            <span>Desliza o usa las flechas para seguir viendo el proyecto.</span>
+            <span>{currentSlide.hint}</span>
+            <small>{project.outcome}</small>
           </div>
 
           <div className="viewer-dots" aria-label={`Progreso del proyecto ${project.title}`}>
-          {slides.map((slide, index) => (
-            <button
-              type="button"
-              key={slide.id}
-              className={`viewer-dot${index === activeSlide ? ' is-active' : ''}`}
-              onClick={() => setActiveSlide(index)}
-              aria-label={`Ver ${slide.title}`}
-            />
-          ))}
+            {slides.map((slide, index) => (
+              <button
+                type="button"
+                key={slide.id}
+                className={`viewer-dot${index === activeSlide ? ' is-active' : ''}`}
+                onClick={() => setActiveSlide(index)}
+                aria-label={`Ver ${slide.title}`}
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -213,6 +208,7 @@ function App() {
   const [catalog, setCatalog] = useState(fallbackCatalog);
   const [loadState, setLoadState] = useState('loading');
   const [activeFilter, setActiveFilter] = useState('all');
+
   const whatsappHref = `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(
     'Hola Ellender Dev, quiero cotizar un proyecto de software.',
   )}`;
@@ -264,66 +260,59 @@ function App() {
   );
 
   const stats = [
-    { value: `${catalog.projects.length || 7} proyectos`, label: 'Casos reales mostrados con sus pantallas completas' },
-    { value: `${totalSlides || 0} vistas`, label: 'Galeria compacta con explicacion de cada imagen' },
-    { value: 'Web + mobile', label: 'Presentacion adaptada al formato de cada producto' },
+    { value: `${catalog.projects.length || 7}`, label: 'proyectos' },
+    { value: `${totalSlides || 0}`, label: 'vistas' },
+    { value: 'web + mobile', label: 'formatos' },
   ];
 
   return (
     <div className="site-shell">
-      <div className="paper-noise" />
-      <div className="hero-glow hero-glow-left" />
-      <div className="hero-glow hero-glow-right" />
+      <div className="linux-grid" />
 
       <header className="topbar">
         <a className="brand" href="#inicio" aria-label="Ir al inicio">
-          <span className="brand-mark">ED</span>
+          <img className="brand-avatar" src={catalog.profileImage} alt="Marca Ellender Dev" />
           <span className="brand-copy">
             <strong>Ellender Dev</strong>
-            <small>Portafolio de productos digitales</small>
+            <small>Linux product portfolio</small>
           </span>
         </a>
 
         <nav className="nav-links">
-          <a href="#proyectos">Proyectos</a>
-          <a href="#estudio">Enfoque</a>
-          <a href="#contacto">Contacto</a>
+          <a className="nav-pill" href={contact.github} target="_blank" rel="noreferrer">
+            Github
+          </a>
+          <a className="nav-pill" href="#proyectos">
+            Proyectos
+          </a>
+          <a className="nav-pill" href="#enfoque">
+            Enfoque
+          </a>
+          <a className="nav-pill" href="#contacto">
+            Contacto
+          </a>
         </nav>
-
-        <a className="cta-button ghost" href={contact.github} target="_blank" rel="noreferrer">
-          <Github size={18} />
-          GitHub
-        </a>
       </header>
 
       <main>
         <section className="hero" id="inicio">
           <div className="hero-copy">
-            <span className="eyebrow">
-              <Sparkles size={16} />
-              Diseno de productos que se sienten reales
-            </span>
+            <h1>Proyectos web y mobile, claros y directos.</h1>
 
-            <h1>Proyectos web y mobile con una presentacion mas limpia y directa.</h1>
-
-            <p className="hero-description">
-              Portafolio visual de productos reales hechos para negocio.
-            </p>
-
-            <div className="hero-actions">
+            <div className="hero-actions" id="enfoque">
               <a className="cta-button primary" href={whatsappHref} target="_blank" rel="noreferrer">
-                <Phone size={18} />
-                Contactar por WhatsApp
+                <Phone size={16} />
+                WhatsApp
               </a>
               <a className="cta-button secondary" href="#proyectos">
-                Ver galeria completa
-                <ArrowRight size={18} />
+                <Play size={16} />
+                Galeria
               </a>
             </div>
 
             <div className="hero-highlights">
               {stats.map((item) => (
-                <article className="metric-card" key={item.value}>
+                <article className="metric-card" key={item.label}>
                   <strong>{item.value}</strong>
                   <span>{item.label}</span>
                 </article>
@@ -338,51 +327,13 @@ function App() {
               </div>
               <div className="identity-notes">
                 <span>Ellender Dev</span>
-                <strong>Interfaces reales para marcas que quieren verse mejor.</strong>
+                <strong>Diseño profesional y compacto.</strong>
               </div>
             </article>
-
-            <div className="hero-floating-card">
-              <span>Recorrido guiado</span>
-              <p>Una vista a la vez.</p>
-            </div>
-
-            <div className="hero-floating-card secondary">
-              <MapPinned size={18} />
-              <p>Web y mobile bien encuadrados.</p>
-            </div>
-          </div>
-        </section>
-
-        <section className="section studio-section" id="estudio">
-          <div className="section-heading compact">
-            <span className="eyebrow">Como se presenta el trabajo</span>
-            <h2>Menos texto, mas producto.</h2>
-          </div>
-
-          <div className="studio-grid">
-            {studioNotes.map((item) => {
-              const Icon = item.icon;
-
-              return (
-                <article className="studio-card" key={item.title}>
-                  <div className="studio-icon">
-                    <Icon size={20} />
-                  </div>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </article>
-              );
-            })}
           </div>
         </section>
 
         <section className="section" id="proyectos">
-          <div className="section-heading">
-            <span className="eyebrow">Proyectos realizados</span>
-            <h2>Siete productos mostrados uno por uno.</h2>
-          </div>
-
           <div className="filter-row" role="tablist" aria-label="Filtrar proyectos">
             {filters.map((filter) => (
               <button
@@ -396,10 +347,8 @@ function App() {
             ))}
           </div>
 
-          {loadState === 'loading' ? <p className="status-copy">Cargando galeria de proyectos...</p> : null}
-          {loadState === 'error' ? (
-            <p className="status-copy">No se pudo cargar la galeria automaticamente. Ejecuta la sincronizacion de assets e intenta de nuevo.</p>
-          ) : null}
+          {loadState === 'loading' ? <p className="status-copy">Cargando...</p> : null}
+          {loadState === 'error' ? <p className="status-copy">No se pudo cargar la galeria.</p> : null}
 
           <div className="projects-list">
             {filteredProjects.map((project) => (
@@ -410,39 +359,27 @@ function App() {
 
         <section className="section contact-section" id="contacto">
           <div className="contact-card">
-            <div>
-              <span className="eyebrow">Contacto directo</span>
-              <h2>Si quieres una interfaz asi para tu negocio, conversemos.</h2>
-              <p>
-                Desarrollo web, mobile y sistemas de gestion.
-              </p>
-            </div>
-
-            <div className="contact-actions">
-              <a className="contact-link" href={whatsappHref} target="_blank" rel="noreferrer">
+            <h2>Contacto directo</h2>
+            <div className="contact-icons">
+              <a className="contact-icon" href={whatsappHref} target="_blank" rel="noreferrer" aria-label="WhatsApp">
                 <Phone size={18} />
-                WhatsApp: {contact.whatsappLabel}
               </a>
-              <a className="contact-link" href={`mailto:${contact.email}`}>
+              <a className="contact-icon" href={`mailto:${contact.email}`} aria-label="Correo">
                 <Mail size={18} />
-                {contact.email}
               </a>
-              <a className="contact-link" href={contact.github} target="_blank" rel="noreferrer">
+              <a className="contact-icon" href={contact.github} target="_blank" rel="noreferrer" aria-label="GitHub">
                 <Github size={18} />
-                GitHub
               </a>
-              <a className="contact-link" href={contact.linkedin} target="_blank" rel="noreferrer">
+              <a className="contact-icon" href={contact.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
                 <Linkedin size={18} />
-                LinkedIn
               </a>
             </div>
           </div>
         </section>
       </main>
 
-      <a className="whatsapp-float" href={whatsappHref} target="_blank" rel="noreferrer">
+      <a className="whatsapp-float" href={whatsappHref} target="_blank" rel="noreferrer" aria-label="Abrir WhatsApp">
         <Phone size={18} />
-        Hablemos
       </a>
     </div>
   );

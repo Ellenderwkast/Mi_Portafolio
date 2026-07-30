@@ -1,4 +1,4 @@
-import { copyFileSync, mkdirSync, readdirSync, statSync, writeFileSync } from 'node:fs';
+﻿import { copyFileSync, mkdirSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import { dirname, extname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -8,47 +8,19 @@ const projectsRoot = resolve(rootDir, 'Imagenes de todos mis proyectos actual');
 const publicProjectsRoot = resolve(rootDir, 'public/assets/projects');
 
 const PROJECTS_CONFIG = {
-  'CRM Gimnassio': {
-    id: 'crm-gimnasio',
-    title: 'CRM gimnasio',
-    tagline: 'Operacion y control para centros fitness',
-    audience: 'Ideal para gimnasios que quieren verse mas ordenados y profesionales en su operacion diaria.',
-    promise: 'Convierte tareas repetitivas en una rutina mucho mas clara para el equipo y para la administracion.',
-    platform: 'Web + app operativa',
-    segment: 'gestion',
-    segmentLabel: 'Gestion y operacion',
-    frame: 'desktop',
-    summary:
-      'Un sistema para que el gimnasio gestione clientes, planes, pagos y acceso diario sin depender de procesos manuales.',
-    outcome:
-      'Ayuda a que la operacion se vea ordenada, profesional y mucho mas facil de supervisar.',
-    highlights: ['Clientes y membresias', 'Cobros y caja', 'Control de acceso', 'Comunicacion interna'],
-    preferredOrder: [
-      'dashboard',
-      'dahboard',
-      'gestion de clientes',
-      'membresias',
-      'pago y caja',
-      'control de acceso',
-      'comunicacion',
-      'login',
-    ],
-  },
   Ecomerce: {
     id: 'ecomerce',
     title: 'Ecommerce',
     tagline: 'Venta digital con administracion completa',
-    audience: 'Pensado para marcas que quieren vender online con una experiencia clara desde el catalogo hasta el pago.',
-    promise: 'Hace que comprar se sienta confiable y que administrar la tienda no se vuelva un caos.',
     platform: 'Tienda web + panel administrativo',
     segment: 'venta',
     segmentLabel: 'Venta digital',
     frame: 'desktop',
-    summary:
-      'Una tienda pensada para vender con confianza: muestra productos, acompana la compra y deja claro cada paso del pago y el envio.',
-    outcome:
-      'El cliente compra con tranquilidad y el negocio mantiene control sobre pedidos, stock y logistica.',
-    highlights: ['Catalogo visual', 'Carrito y checkout', 'Pagos integrados', 'Panel de pedidos y envios'],
+    shortSummary: 'Compra, pago y gestion en una sola experiencia.',
+    summary: 'Tienda enfocada en conversion y administracion clara de pedidos.',
+    outcome: 'Flujo de compra mas claro y gestion comercial ordenada.',
+    highlights: ['Catalogo visual', 'Carrito y checkout', 'Pagos integrados', 'Panel de pedidos'],
+    liveUrl: 'https://github.com/Ellenderwkast',
     preferredOrder: [
       'inicio',
       'todos los productos',
@@ -66,129 +38,135 @@ const PROJECTS_CONFIG = {
     id: 'open-android',
     title: 'Open servicios cerca de ti - Android',
     tagline: 'Marketplace local desde Android',
-    audience: 'Creado para comunidades y negocios que necesitan reunir servicios cercanos en una sola app.',
-    promise: 'Acerca aliados, pedidos y pagos dentro de una experiencia facil de entender para cualquier usuario.',
     platform: 'App Android',
     segment: 'apps',
     segmentLabel: 'Apps y plataformas',
     frame: 'mobile',
-    summary:
-      'Una app para descubrir servicios cercanos, comprar, pedir, pagar y hablar con aliados desde una sola experiencia.',
-    outcome:
-      'Le da al usuario una sensacion de cercania, variedad y control en cada paso de la compra o solicitud.',
-    highlights: ['Home por categorias', 'Chat con aliados', 'Pedidos y pagos', 'Panel administrativo'],
+    shortSummary: 'Servicios cercanos, chat y pagos desde Android.',
+    summary: 'Marketplace local para descubrir, pedir y pagar servicios.',
+    outcome: 'Experiencia de uso directa para compra y coordinacion.',
+    highlights: ['Home por categorias', 'Chat con aliados', 'Pedidos y pagos', 'Panel admin'],
+    liveUrl: 'https://github.com/Ellenderwkast',
     preferredOrder: ['home', 'menu', 'chat', 'gestion de productos', 'gestion de pedidos', 'gestion de pagos', 'panel admin avanzado', 'panel admin', 'cuenta de usuario', 'login'],
   },
   'Open servicios cerca de ti - Apple': {
     id: 'open-apple',
     title: 'Open servicios cerca de ti - Apple',
     tagline: 'Marketplace local para iPhone',
-    audience: 'Pensado para usuarios de iPhone que buscan resolver compras y servicios locales desde un solo lugar.',
-    promise: 'Presenta la misma utilidad de Open con una sensacion mas pulida y premium en iOS.',
     platform: 'App iPhone',
     segment: 'apps',
     segmentLabel: 'Apps y plataformas',
     frame: 'mobile',
-    summary:
-      'La misma experiencia de servicios cercanos, adaptada para iPhone con un flujo limpio para explorar, conversar y comprar.',
-    outcome:
-      'Presenta el producto con sensacion premium y una navegacion pensada para uso diario.',
+    shortSummary: 'Servicios locales y compras en iPhone.',
+    summary: 'Version iOS de Open con enfoque en fluidez y claridad.',
+    outcome: 'Navegacion premium para uso diario.',
     highlights: ['Home y menu', 'Chat fluido', 'Gestion de pagos', 'Panel admin'],
+    liveUrl: 'https://github.com/Ellenderwkast',
     preferredOrder: ['home', 'menu', 'chat', 'gestion de productos', 'gestion de pedidos', 'gestion de pagos', 'panel admin avanzado', 'panel admin', 'cuenta de usuario', 'login'],
   },
   'Sistema de inventario': {
     id: 'sistema-inventario',
     title: 'Sistema de inventario',
     tagline: 'Control comercial con modo claro y oscuro',
-    audience: 'Hecho para negocios que necesitan controlar stock, clientes y proveedores sin depender de hojas sueltas.',
-    promise: 'Pone la operacion comercial en orden y ayuda a revisar rapidamente que entra, que sale y que falta.',
     platform: 'Sistema web',
     segment: 'gestion',
     segmentLabel: 'Gestion y operacion',
     frame: 'desktop',
-    summary:
-      'Una herramienta para llevar inventario, clientes, proveedores, remisiones y reportes desde un entorno claro y ordenado.',
-    outcome:
-      'Reduce desorden operativo y hace mucho mas facil revisar movimientos, ventas y disponibilidad.',
-    highlights: ['Dashboard', 'Productos y stock', 'Clientes y proveedores', 'Reportes y remisiones'],
+    shortSummary: 'Inventario, clientes y reportes en control.',
+    summary: 'Herramienta para stock, clientes y proveedores.',
+    outcome: 'Operacion comercial mas estable y visible.',
+    highlights: ['Dashboard', 'Productos y stock', 'Clientes y proveedores', 'Reportes'],
+    liveUrl: 'https://github.com/Ellenderwkast',
     preferredOrder: ['dashboard', 'productos', 'clientes', 'proveedores', 'remision', 'reportes', 'login'],
   },
   'TumaGo - Android': {
     id: 'tumago-android',
     title: 'TumaGo - Android',
     tagline: 'Movilidad urbana desde Android',
-    audience: 'Ideal para ciudades o servicios locales que quieren ofrecer una forma simple de pedir transporte.',
-    promise: 'Hace que pedir un viaje, ver la ruta y conversar durante el servicio se sienta natural y rapido.',
     platform: 'App Android',
     segment: 'movilidad',
     segmentLabel: 'Movilidad y reservas',
     frame: 'mobile',
-    summary:
-      'Una app para pedir transporte, ver el mapa en tiempo real, indicar recogida y destino y conversar durante el servicio.',
-    outcome:
-      'Hace que pedir un viaje se sienta simple, cercano y confiable desde el primer toque.',
-    highlights: ['Mapa en vivo', 'Recogida y destino', 'Chat', 'Experiencia clara y oscura'],
-    preferredOrder: ['arranque', 'mapa', 'recogida y destino', 'chat', 'sidebar', 'login'],
+    shortSummary: 'Solicitar viaje y seguir ruta en tiempo real.',
+    summary: 'App para pedir transporte con flujo guiado.',
+    outcome: 'Viajes mas claros desde el primer paso.',
+    highlights: ['Mapa en vivo', 'Recogida y destino', 'Chat', 'Modo claro y oscuro'],
+    liveUrl: 'https://github.com/Ellenderwkast',
+    preferredOrder: ['modo claro', 'recogida y destino', 'mapa', 'modo oscuro', 'chat', 'sidebar', 'login', 'arranque'],
   },
   'TumaGo -Apple': {
     id: 'tumago-apple',
     title: 'TumaGo - Apple',
     tagline: 'Movilidad urbana para iPhone',
-    audience: 'Pensado para usuarios iPhone que esperan una experiencia de movilidad limpia, directa y confiable.',
-    promise: 'Combina mapa, viaje y comunicacion en una experiencia agil que se entiende desde el primer uso.',
     platform: 'App iPhone',
     segment: 'movilidad',
     segmentLabel: 'Movilidad y reservas',
     frame: 'mobile',
-    summary:
-      'La experiencia de TumaGo adaptada a iPhone para pedir viajes, seguir rutas y mantener la conversacion activa durante el trayecto.',
-    outcome:
-      'El producto transmite agilidad y confianza, con una interfaz pensada para uso rapido y frecuente.',
-    highlights: ['Mapa en vivo', 'Destino guiado', 'Chat', 'Diseño claro y oscuro'],
-    preferredOrder: ['arranque', 'mapa', 'recogida y destino', 'chat', 'sidebar', 'login'],
+    shortSummary: 'Reserva y seguimiento de viaje en iPhone.',
+    summary: 'Version iOS de TumaGo para movilidad urbana.',
+    outcome: 'Experiencia agil para trayectos frecuentes.',
+    highlights: ['Mapa en vivo', 'Destino guiado', 'Chat', 'Modo claro y oscuro'],
+    liveUrl: 'https://github.com/Ellenderwkast',
+    preferredOrder: ['modo claro', 'recogida y destino', 'mapa', 'modo oscuro', 'chat', 'sidebar', 'login', 'arranque'],
+  },
+  'CRM Gimnassio': {
+    id: 'crm-gimnasio',
+    title: 'CRM gimnasio',
+    tagline: 'Operacion y control para centros fitness',
+    platform: 'Web + app operativa',
+    segment: 'gestion',
+    segmentLabel: 'Gestion y operacion',
+    frame: 'desktop',
+    shortSummary: 'Clientes, membresias y caja en un flujo central.',
+    summary: 'Sistema para operacion diaria de gimnasios.',
+    outcome: 'Procesos internos mas consistentes y medibles.',
+    highlights: ['Clientes y membresias', 'Cobros y caja', 'Control de acceso', 'Comunicacion'],
+    liveUrl: 'https://github.com/Ellenderwkast',
+    preferredOrder: ['dashboard', 'dahboard', 'gestion de clientes', 'membresias', 'pago y caja', 'control de acceso', 'comunicacion', 'login'],
   },
 };
 
+const PROJECT_ORDER = [
+  'ecomerce',
+  'open-android',
+  'open-apple',
+  'sistema-inventario',
+  'tumago-android',
+  'tumago-apple',
+  'crm-gimnasio',
+];
+
 const IMAGE_EXTENSIONS = new Set(['.png', '.jpg', '.jpeg', '.webp']);
 const explanationMap = [
-  ['login', 'Pantalla de acceso pensada para que entrar al producto sea rapido, claro y confiable.'],
-  ['arranque', 'Primer contacto visual con la marca para que la experiencia arranque con identidad y orden.'],
-  ['home', 'Vista principal donde el usuario entiende de inmediato que puede hacer y por donde empezar.'],
-  ['inicio', 'Pantalla de bienvenida enfocada en mostrar valor desde los primeros segundos.'],
-  ['menu', 'Navegacion resumida para encontrar funciones importantes sin perder tiempo.'],
-  ['sidebar', 'Acceso lateral a funciones clave para moverse por la app con naturalidad.'],
-  ['chat', 'Espacio de conversacion para resolver dudas o coordinar acciones sin salir del flujo.'],
-  ['dashboard', 'Resumen visual de lo mas importante para revisar el estado del negocio de un vistazo.'],
-  ['dahboard', 'Resumen visual de lo mas importante para revisar el estado del negocio de un vistazo.'],
-  ['clientes', 'Modulo pensado para organizar clientes y atenderlos con mas continuidad y control.'],
-  ['membresias', 'Seccion donde los planes se presentan de forma ordenada para vender y administrar mejor.'],
-  ['control de acceso', 'Vista que ayuda a validar entradas y mantener el acceso al servicio bajo control.'],
-  ['aliado', 'Pantalla que presenta al aliado o proveedor para que el usuario entienda con quien esta interactuando.'],
-  ['comunicacion', 'Pantalla para mantener el contacto operativo dentro del sistema de manera simple.'],
-  ['pago', 'Flujo pensado para que cobros y movimientos se entiendan sin friccion.'],
-  ['caja', 'Area de caja que concentra pagos y movimientos para trabajar con mas seguridad.'],
-  ['productos', 'Catalogo o gestion de productos para revisar oferta, stock y detalle con claridad.'],
-  ['pedidos', 'Seguimiento visual de pedidos para saber que esta pasando en cada momento.'],
-  ['pagos', 'Pantalla donde el proceso de pago se vuelve claro y facil de completar.'],
-  ['panel admin avanzado', 'Vista administrativa avanzada para tomar decisiones y controlar mas detalles del negocio.'],
-  ['panel admin', 'Centro de administracion para organizar tareas, contenidos y operacion diaria.'],
-  ['cuenta de usuario', 'Espacio personal del usuario para revisar su informacion y mantener control sobre su experiencia.'],
-  ['mapa', 'Vista en tiempo real para ubicarse mejor y tomar decisiones con rapidez y confianza.'],
-  ['recogida y destino', 'Paso guiado para indicar origen y destino con menos friccion y mas claridad.'],
-  ['carrito', 'Resumen de compra pensado para revisar todo antes de confirmar el pedido.'],
-  ['checkout', 'Ultimo paso de compra, diseñado para que pagar sea facil y sin dudas.'],
-  ['wompi', 'Integracion de pago presentada de forma clara para generar confianza al momento de finalizar la compra.'],
-  ['nequi', 'Metodo de pago familiar para que el usuario complete la compra con tranquilidad.'],
-  ['usuarios', 'Vista para administrar cuentas y mantener el entorno del producto bien organizado.'],
-  ['envio', 'Seccion que ayuda a coordinar entregas y mantener la logistica bajo control.'],
-  ['transportadora', 'Vista que organiza la logistica de entrega para que el pedido siga un camino claro hasta el cliente.'],
-  ['despacho', 'Pantalla para coordinar la salida del pedido y reducir errores al momento de entregarlo.'],
-  ['historial', 'Registro visual para revisar movimientos anteriores y mantener trazabilidad de lo que ya paso.'],
-  ['solicitudes', 'Panel pensado para atender solicitudes puntuales sin perder seguimiento ni contexto.'],
-  ['blog', 'Espacio editorial para fortalecer la marca y dar contexto al producto.'],
-  ['reportes', 'Vista de analisis para revisar resultados y tomar decisiones con mas criterio.'],
-  ['proveedores', 'Modulo que organiza proveedores y mejora el seguimiento del abastecimiento.'],
-  ['remision', 'Pantalla para registrar movimientos de mercancia con orden y trazabilidad.'],
+  ['login', 'Pantalla de acceso limpia para entrar rapido al sistema.'],
+  ['arranque', 'Arranque visual del producto para orientar al usuario desde el inicio.'],
+  ['home', 'Vista principal con acceso directo a acciones clave.'],
+  ['inicio', 'Pantalla de bienvenida para empezar el recorrido.'],
+  ['menu', 'Navegacion simple para encontrar funciones sin friccion.'],
+  ['sidebar', 'Navegacion lateral para cambiar de seccion rapidamente.'],
+  ['chat', 'Comunicacion integrada para coordinar en tiempo real.'],
+  ['dashboard', 'Resumen del estado general para tomar decisiones rapidas.'],
+  ['dahboard', 'Resumen del estado general para tomar decisiones rapidas.'],
+  ['clientes', 'Gestion de clientes para mantener seguimiento activo.'],
+  ['membresias', 'Control de planes y vigencias de membresias.'],
+  ['control de acceso', 'Validacion de accesos y actividad diaria.'],
+  ['comunicacion', 'Canal de comunicacion dentro del sistema.'],
+  ['pago', 'Flujo de pagos mas claro y confiable.'],
+  ['caja', 'Control de movimientos en caja con trazabilidad.'],
+  ['productos', 'Control de productos y disponibilidad de inventario.'],
+  ['pedidos', 'Seguimiento de pedidos en cada etapa.'],
+  ['pagos', 'Gestion de pagos integrados dentro del flujo.'],
+  ['panel admin', 'Panel de administracion para operar todo el producto.'],
+  ['cuenta de usuario', 'Configuraciones y datos clave del usuario.'],
+  ['mapa', 'Mapa en tiempo real para ubicacion y ruta.'],
+  ['recogida y destino', 'Paso guiado para seleccionar origen y destino.'],
+  ['carrito', 'Resumen de compra antes de finalizar.'],
+  ['checkout', 'Confirmacion de compra en un flujo corto.'],
+  ['wompi', 'Pago integrado con experiencia de confianza.'],
+  ['nequi', 'Metodo de pago familiar para completar la compra.'],
+  ['reportes', 'Reportes para seguimiento y decisiones.'],
+  ['proveedores', 'Control de proveedores y abastecimiento.'],
+  ['remision', 'Registro de movimientos de salida y entrada.'],
 ];
 
 function slugify(value) {
@@ -217,7 +195,7 @@ function explainSlide(label, projectTitle) {
     }
   }
 
-  return `Vista real de ${projectTitle} que deja ver como se siente el producto en uso y que tipo de experiencia recibe la persona al interactuar con el sistema.`;
+  return `Vista real de ${projectTitle} para mostrar su experiencia en uso.`;
 }
 
 function sortByPriority(files, preferredOrder) {
@@ -237,6 +215,52 @@ function sortByPriority(files, preferredOrder) {
   });
 }
 
+function interleaveTumago(files) {
+  const working = [...files];
+  const pickupIndex = working.findIndex((name) => slugify(name).includes('recogida-y-destino'));
+  let pinnedPickup = null;
+
+  if (pickupIndex !== -1) {
+    [pinnedPickup] = working.splice(pickupIndex, 1);
+  }
+
+  const light = [];
+  const dark = [];
+  const neutral = [];
+
+  for (const fileName of working) {
+    const normalized = slugify(fileName);
+
+    if (normalized.includes('claro') || normalized.includes('light')) {
+      light.push(fileName);
+      continue;
+    }
+
+    if (normalized.includes('oscuro') || normalized.includes('dark')) {
+      dark.push(fileName);
+      continue;
+    }
+
+    neutral.push(fileName);
+  }
+
+  const mixed = [];
+  while (light.length || dark.length) {
+    if (light.length) {
+      mixed.push(light.shift());
+    }
+    if (dark.length) {
+      mixed.push(dark.shift());
+    }
+  }
+
+  return [
+    ...(pinnedPickup ? [pinnedPickup] : []),
+    ...mixed,
+    ...neutral,
+  ];
+}
+
 function collectProjectFolders() {
   return readdirSync(projectsRoot).filter((entry) => statSync(join(projectsRoot, entry)).isDirectory());
 }
@@ -250,9 +274,13 @@ function buildProject(folderName) {
 
   const folderPath = join(projectsRoot, folderName);
   const files = readdirSync(folderPath).filter((fileName) => IMAGE_EXTENSIONS.has(extname(fileName).toLowerCase()));
-  const orderedFiles = sortByPriority(files, config.preferredOrder);
-  const projectOutputDir = resolve(publicProjectsRoot, config.id);
 
+  let orderedFiles = sortByPriority(files, config.preferredOrder);
+  if (config.id === 'tumago-android' || config.id === 'tumago-apple') {
+    orderedFiles = interleaveTumago(orderedFiles);
+  }
+
+  const projectOutputDir = resolve(publicProjectsRoot, config.id);
   mkdirSync(projectOutputDir, { recursive: true });
 
   const slides = orderedFiles.map((fileName, index) => {
@@ -268,6 +296,7 @@ function buildProject(folderName) {
     return {
       id: `${config.id}-${index + 1}`,
       title,
+      hint: 'Desliza o usa flechas para seguir.',
       explanation: explainSlide(title, config.title),
       src: publicPath,
       frame: config.frame,
@@ -282,20 +311,14 @@ function buildProject(folderName) {
 }
 
 mkdirSync(resolve(rootDir, 'public/assets/profile'), { recursive: true });
-copyFileSync(
-  resolve(rootDir, 'Mi imagen Ellenderdev/mi imagen.jpeg'),
-  resolve(rootDir, 'public/assets/profile/mi-imagen.jpeg'),
-);
+copyFileSync(resolve(rootDir, 'Mi imagen Ellenderdev/mi imagen.jpeg'), resolve(rootDir, 'public/assets/profile/mi-imagen.jpeg'));
 
 mkdirSync(publicProjectsRoot, { recursive: true });
 
 const projects = collectProjectFolders()
   .map(buildProject)
   .filter(Boolean)
-  .sort((left, right) => {
-    const desiredOrder = Object.values(PROJECTS_CONFIG).map((project) => project.id);
-    return desiredOrder.indexOf(left.id) - desiredOrder.indexOf(right.id);
-  });
+  .sort((left, right) => PROJECT_ORDER.indexOf(left.id) - PROJECT_ORDER.indexOf(right.id));
 
 const manifest = {
   generatedAt: new Date().toISOString(),
