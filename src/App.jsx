@@ -1,18 +1,16 @@
+import { useEffect, useMemo, useRef, useState } from 'react';
 import {
+  ArrowLeft,
   ArrowRight,
-  BadgeCheck,
   BriefcaseBusiness,
-  ChevronRight,
-  Code2,
   Github,
-  Globe,
   Layers3,
   Linkedin,
   Mail,
+  MapPinned,
   MonitorSmartphone,
   Phone,
   Sparkles,
-  Star,
 } from 'lucide-react';
 
 const contact = {
@@ -23,108 +21,242 @@ const contact = {
   linkedin: 'https://www.linkedin.com/in/ellender-castillo-rincon-9b5552407/',
 };
 
-const stats = [
-  { value: 'Web + Mobile', label: 'Soluciones completas para negocio digital' },
-  { value: 'UI con impacto', label: 'Interfaces orientadas a conversión y confianza' },
-  { value: 'Entrega real', label: 'Productos pensados para salir a producción' },
+const filters = [
+  { id: 'all', label: 'Todos' },
+  { id: 'gestion', label: 'Gestion y operacion' },
+  { id: 'venta', label: 'Venta digital' },
+  { id: 'apps', label: 'Apps y plataformas' },
+  { id: 'movilidad', label: 'Movilidad y reservas' },
 ];
 
-const services = [
+const studioNotes = [
   {
-    icon: Globe,
-    title: 'Desarrollo web profesional',
-    description:
-      'Sitios, plataformas administrativas y experiencias frontend con enfoque comercial, rendimiento y escalabilidad.',
+    icon: BriefcaseBusiness,
+    title: 'Productos que se entienden rapido',
+    description: 'Cada vista busca que cualquier persona capte el valor del proyecto sin leer lenguaje tecnico.',
   },
   {
     icon: MonitorSmartphone,
-    title: 'Apps móviles con visión de producto',
-    description:
-      'Aplicaciones móviles útiles, modernas y listas para crecer con lógica de negocio, catálogos, flujos de compra y operación.',
+    title: 'Presentacion real, no maquillaje',
+    description: 'El portafolio muestra pantallas reales y explica que siente el usuario en cada flujo importante.',
   },
   {
     icon: Layers3,
-    title: 'Sistemas a medida',
-    description:
-      'Soluciones que conectan frontend, backend y operación del negocio para reducir fricción y mejorar control.',
+    title: 'Diseno adaptable al formato',
+    description: 'Los visores cambian para web o mobile, asi cada imagen respira bien sin importar su proporcion.',
   },
 ];
 
-const projects = [
-  {
-    name: 'Open App Comunitaria',
-    type: 'App móvil tipo delivery y servicios',
-    summary:
-      'Aplicación móvil construida en Flutter con home modular, búsqueda, categorías, aliados cercanos, carrito global y experiencia de compra por contexto.',
-    impact: 'Integra alimentos, salud, transporte, mascotas y servicios en una sola experiencia móvil.',
-    stack: ['Flutter', 'Arquitectura modular', 'Catálogos por categoría', 'Carrito global'],
-    cover: '/assets/open/open-home.png',
-    coverMode: 'contain',
-    gallery: ['/assets/open/open-1.png', '/assets/open/open-2.png', '/assets/open/open-3.png'],
-  },
-  {
-    name: 'Karell Premium E-Commerce',
-    type: 'Tienda online con UX comercial',
-    summary:
-      'Frontend en React y Vite para comercio electrónico con catálogo dinámico, autenticación, carrito persistente y flujo de checkout listo para producción.',
-    impact: 'Pensado para vender más con una navegación clara y una interfaz moderna enfocada en productos.',
-    stack: ['React', 'Vite', 'Zustand', 'Axios', 'Responsive UI'],
-    cover: '/assets/ecommerce/ecommerce-1.png',
-    coverMode: 'contain',
-    coverFrame: 'wide',
-    galleryMode: 'contain',
-    galleryFrame: 'wide',
-    gallery: [
-      '/assets/ecommerce/ecommerce-1.png',
-      '/assets/ecommerce/ecommerce-2.png',
-      '/assets/ecommerce/ecommerce-3.png',
-    ],
-  },
-  {
-    name: 'CRM Gym Cast Fit',
-    type: 'Sistema empresarial para gimnasios',
-    summary:
-      'Plataforma integral para la gestión de múltiples gimnasios con backend REST, frontend web en React y aplicación móvil para la operación diaria.',
-    impact: 'Centraliza acceso, operación y control en un entorno con identidad visual fuerte y experiencia profesional.',
-    stack: ['Node.js', 'Express', 'React', 'Vite', 'React Native'],
-    cover: '/assets/crm/crm-1.png',
-    coverMode: 'contain',
-    coverFrame: 'wide',
-    galleryMode: 'contain',
-    galleryFrame: 'wide',
-    gallery: ['/assets/crm/crm-1.png', '/assets/crm/crm-2.png'],
-  },
-];
+const fallbackCatalog = {
+  generatedAt: null,
+  profileImage: '/assets/profile/mi-imagen.jpeg',
+  projects: [],
+};
 
-const process = [
-  'Entiendo el objetivo comercial y la necesidad real del producto.',
-  'Diseño una experiencia clara, moderna y lista para usuarios reales.',
-  'Desarrollo soluciones sólidas con foco en rendimiento y mantenimiento.',
-  'Entrego un producto presentable, escalable y preparado para evolucionar.',
-];
+function ProjectCard({ project }) {
+  const [activeSlide, setActiveSlide] = useState(0);
+  const touchStart = useRef(0);
+  const touchEnd = useRef(0);
+  const slides = project.slides ?? [];
+  const currentSlide = slides[activeSlide] ?? null;
+
+  useEffect(() => {
+    setActiveSlide(0);
+  }, [project.id]);
+
+  const goToPrevious = () => {
+    setActiveSlide((current) => (current === 0 ? slides.length - 1 : current - 1));
+  };
+
+  const goToNext = () => {
+    setActiveSlide((current) => (current === slides.length - 1 ? 0 : current + 1));
+  };
+
+  const handleTouchStart = (event) => {
+    touchStart.current = event.changedTouches[0].clientX;
+  };
+
+  const handleTouchEnd = (event) => {
+    touchEnd.current = event.changedTouches[0].clientX;
+    const delta = touchStart.current - touchEnd.current;
+
+    if (Math.abs(delta) < 50) {
+      return;
+    }
+
+    if (delta > 0) {
+      goToNext();
+      return;
+    }
+
+    goToPrevious();
+  };
+
+  if (!currentSlide) {
+    return null;
+  }
+
+  return (
+    <article className="project-card" id={project.id}>
+      <div className="project-copy">
+        <div className="project-kicker-row">
+          <span className="project-badge">{project.segmentLabel}</span>
+          <span className="project-platform">{project.platform}</span>
+        </div>
+
+        <div className="project-heading-block">
+          <h3>{project.title}</h3>
+          <p className="project-tagline">{project.tagline}</p>
+        </div>
+
+        <p className="project-summary">{project.summary}</p>
+
+        <div className="project-story-box">
+          <span className="story-label">Lo que esta viendo la persona</span>
+          <strong>{currentSlide.title}</strong>
+          <p>{currentSlide.explanation}</p>
+        </div>
+
+        <div className="project-highlights">
+          {project.highlights.map((highlight) => (
+            <span key={highlight}>{highlight}</span>
+          ))}
+        </div>
+
+        <div className="project-outcome">
+          <span>Por que este proyecto importa</span>
+          <p>{project.outcome}</p>
+        </div>
+      </div>
+
+      <div className="project-viewer">
+        <div className="viewer-topbar">
+          <div>
+            <span className="viewer-label">Galeria guiada</span>
+            <p>
+              {activeSlide + 1} / {slides.length}
+            </p>
+          </div>
+
+          <div className="viewer-nav">
+            <button type="button" className="viewer-arrow" onClick={goToPrevious} aria-label={`Ver imagen anterior de ${project.title}`}>
+              <ArrowLeft size={18} />
+            </button>
+            <button type="button" className="viewer-arrow" onClick={goToNext} aria-label={`Ver imagen siguiente de ${project.title}`}>
+              <ArrowRight size={18} />
+            </button>
+          </div>
+        </div>
+
+        <div
+          className={`viewer-stage viewer-stage--${project.frame}`}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          <div className={`frame-shell frame-shell--${project.frame}`}>
+            <img src={currentSlide.src} alt={`${project.title} - ${currentSlide.title}`} />
+          </div>
+        </div>
+
+        <div className="thumb-strip" aria-label={`Miniaturas del proyecto ${project.title}`}>
+          {slides.map((slide, index) => (
+            <button
+              type="button"
+              key={slide.id}
+              className={`thumb-button${index === activeSlide ? ' is-active' : ''}`}
+              onClick={() => setActiveSlide(index)}
+              aria-label={`Ver ${slide.title}`}
+            >
+              <span className={`thumb-frame thumb-frame--${project.frame}`}>
+                <img src={slide.src} alt="" aria-hidden="true" />
+              </span>
+              <span className="thumb-title">{slide.title}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+    </article>
+  );
+}
 
 function App() {
+  const [catalog, setCatalog] = useState(fallbackCatalog);
+  const [loadState, setLoadState] = useState('loading');
+  const [activeFilter, setActiveFilter] = useState('all');
   const whatsappHref = `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(
     'Hola Ellender Dev, quiero cotizar un proyecto de software.',
   )}`;
 
+  useEffect(() => {
+    let active = true;
+
+    fetch('/assets/projects/manifest.json')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('No se pudo cargar el catalogo.');
+        }
+
+        return response.json();
+      })
+      .then((data) => {
+        if (!active) {
+          return;
+        }
+
+        setCatalog(data);
+        setLoadState('ready');
+      })
+      .catch(() => {
+        if (!active) {
+          return;
+        }
+
+        setCatalog(fallbackCatalog);
+        setLoadState('error');
+      });
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const filteredProjects = useMemo(() => {
+    if (activeFilter === 'all') {
+      return catalog.projects;
+    }
+
+    return catalog.projects.filter((project) => project.segment === activeFilter);
+  }, [activeFilter, catalog.projects]);
+
+  const totalSlides = useMemo(
+    () => catalog.projects.reduce((total, project) => total + project.slides.length, 0),
+    [catalog.projects],
+  );
+
+  const stats = [
+    { value: `${catalog.projects.length || 7} proyectos`, label: 'Casos reales mostrados con sus pantallas completas' },
+    { value: `${totalSlides || 0} vistas`, label: 'Galeria compacta con explicacion de cada imagen' },
+    { value: 'Web + mobile', label: 'Presentacion adaptada al formato de cada producto' },
+  ];
+
   return (
-    <div className="page-shell">
-      <div className="ambient ambient-left" />
-      <div className="ambient ambient-right" />
+    <div className="site-shell">
+      <div className="paper-noise" />
+      <div className="hero-glow hero-glow-left" />
+      <div className="hero-glow hero-glow-right" />
 
       <header className="topbar">
         <a className="brand" href="#inicio" aria-label="Ir al inicio">
           <span className="brand-mark">ED</span>
           <span className="brand-copy">
             <strong>Ellender Dev</strong>
-            <small>Software Developer</small>
+            <small>Portafolio de productos digitales</small>
           </span>
         </a>
 
         <nav className="nav-links">
           <a href="#proyectos">Proyectos</a>
-          <a href="#servicios">Servicios</a>
+          <a href="#estudio">Enfoque</a>
           <a href="#contacto">Contacto</a>
         </nav>
 
@@ -139,20 +271,14 @@ function App() {
           <div className="hero-copy">
             <span className="eyebrow">
               <Sparkles size={16} />
-              Desarrollo con visión comercial
+              Diseno de productos que se sienten reales
             </span>
 
-            <h1>
-              <span className="headline-line">Construyo software</span>
-              <span className="headline-line">que hace ver tu marca</span>
-              <span className="headline-line">seria, moderna</span>
-              <span className="headline-line">y lista para vender.</span>
-            </h1>
+            <h1>Portafolio visual de productos web y moviles hechos para vender, organizar y mover negocios de verdad.</h1>
 
             <p className="hero-description">
-              Soy Ellender Dev. Desarrollo experiencias web, aplicaciones móviles y
-              sistemas a medida con una presentación visual fuerte y una ejecución pensada
-              para negocio real.
+              Soy Ellender Dev. Aqui no solo se ve codigo: se ve como cada proyecto ayuda a una persona a comprar,
+              reservar, administrar o tomar decisiones sin sentirse perdida dentro del sistema.
             </p>
 
             <div className="hero-actions">
@@ -161,7 +287,7 @@ function App() {
                 Contactar por WhatsApp
               </a>
               <a className="cta-button secondary" href="#proyectos">
-                Ver proyectos destacados
+                Ver galeria completa
                 <ArrowRight size={18} />
               </a>
             </div>
@@ -177,156 +303,100 @@ function App() {
           </div>
 
           <div className="hero-visual">
-            <div className="hero-orbit hero-orbit-a" />
-            <div className="hero-orbit hero-orbit-b" />
-
-            <article className="identity-card card-3d">
-              <div className="identity-shine" />
-              <img src="/assets/profile/mi-imagen.jpeg" alt="Ellender Dev" />
-              <div className="identity-overlay">
-                <span>Marca personal</span>
-                <h2>Ellender Dev</h2>
-                <p>Desarrollo de software con estética premium y enfoque profesional.</p>
+            <article className="identity-card">
+              <div className="identity-photo-shell">
+                <img src={catalog.profileImage} alt="Ellender Dev" />
+              </div>
+              <div className="identity-notes">
+                <span>Ellender Dev</span>
+                <strong>Interfaces reales para negocios que necesitan verse mas serios y vender mejor.</strong>
+                <p>
+                  Proyectos de fitness, ecommerce, transporte, servicios locales e inventario mostrados con sus pantallas verdaderas.
+                </p>
               </div>
             </article>
 
-            <article className="floating-badge top card-3d">
-              <BadgeCheck size={18} />
-              <span>Disponible para proyectos</span>
-            </article>
+            <div className="hero-floating-card">
+              <span>Recorrido guiado</span>
+              <p>Cada proyecto explica la imagen actual para que cualquiera entienda que esta pasando en pantalla.</p>
+            </div>
 
-            <article className="floating-badge bottom card-3d">
-              <Code2 size={18} />
-              <span>Web, móvil y sistemas de gestión</span>
-            </article>
+            <div className="hero-floating-card secondary">
+              <MapPinned size={18} />
+              <p>Visores especiales para pantallas mobile largas y sistemas web panoramicos.</p>
+            </div>
           </div>
         </section>
 
-        <section className="section intro-strip">
+        <section className="section studio-section" id="estudio">
           <div className="section-heading compact">
-            <span className="eyebrow">Posicionamiento</span>
-            <h2>Más que páginas bonitas: soluciones que transmiten valor, orden y confianza.</h2>
+            <span className="eyebrow">Como se presenta el trabajo</span>
+            <h2>Un portafolio mas editorial, compacto y claro para que la calidad visual no se pierda entre textos grandes.</h2>
           </div>
 
-          <div className="intro-grid">
-            <article className="glass-panel">
-              <BriefcaseBusiness size={22} />
-              <h3>Presencia profesional</h3>
-              <p>
-                Diseño interfaces que ayudan a que una marca se perciba sólida, moderna y bien construida.
-              </p>
-            </article>
-            <article className="glass-panel">
-              <Layers3 size={22} />
-              <h3>Producto integral</h3>
-              <p>
-                Puedo construir desde landing pages y dashboards hasta apps móviles y sistemas conectados.
-              </p>
-            </article>
-            <article className="glass-panel">
-              <Star size={22} />
-              <h3>Enfoque comercial</h3>
-              <p>
-                Cada decisión visual y técnica busca que el producto venda mejor y genere confianza inmediata.
-              </p>
-            </article>
-          </div>
-        </section>
+          <div className="studio-grid">
+            {studioNotes.map((item) => {
+              const Icon = item.icon;
 
-        <section className="section" id="proyectos">
-          <div className="section-heading">
-            <span className="eyebrow">Proyectos destacados</span>
-            <h2>Casos que muestran rango técnico, criterio visual y capacidad de ejecución.</h2>
-            <p>
-              Estas piezas representan desarrollo real en comercio electrónico, sistemas empresariales y aplicaciones móviles orientadas a usuarios finales.
-            </p>
-          </div>
-
-          <div className="projects-list">
-            {projects.map((project, index) => (
-              <article className="project-card" key={project.name}>
-                <div className="project-copy">
-                  <span className="project-index">0{index + 1}</span>
-                  <span className="project-type">{project.type}</span>
-                  <h3>{project.name}</h3>
-                  <p>{project.summary}</p>
-                  <div className="project-impact">
-                    <strong>Valor del proyecto</strong>
-                    <span>{project.impact}</span>
-                  </div>
-                  <div className="tech-tags">
-                    {project.stack.map((tag) => (
-                      <span key={tag}>{tag}</span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="project-visual">
-                  <div
-                    className={`project-cover-wrap card-3d${project.coverFrame ? ` project-cover-wrap--${project.coverFrame}` : ''}`}
-                  >
-                    <img
-                      src={project.cover}
-                      alt={project.name}
-                      className={`project-cover${project.coverMode ? ` project-cover--${project.coverMode}` : ''}`}
-                    />
-                  </div>
-                  <div className="project-gallery">
-                    {project.gallery.map((image, galleryIndex) => (
-                      <div
-                        className={`gallery-shot${project.galleryFrame ? ` gallery-shot--${project.galleryFrame}` : ''}`}
-                        key={`${project.name}-${galleryIndex}`}
-                      >
-                        <img
-                          src={image}
-                          alt={`${project.name} captura ${galleryIndex + 1}`}
-                          className={project.galleryMode ? `gallery-image--${project.galleryMode}` : undefined}
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="section" id="servicios">
-          <div className="section-heading">
-            <span className="eyebrow">Servicios</span>
-            <h2>Trabajo para empresas, marcas personales y negocios que necesitan software con presencia.</h2>
-          </div>
-
-          <div className="services-grid">
-            {services.map((service) => {
-              const Icon = service.icon;
               return (
-                <article className="service-card card-3d" key={service.title}>
-                  <div className="service-icon">
-                    <Icon size={22} />
+                <article className="studio-card" key={item.title}>
+                  <div className="studio-icon">
+                    <Icon size={20} />
                   </div>
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
                 </article>
               );
             })}
           </div>
         </section>
 
-        <section className="section process-section">
+        <section className="section" id="proyectos">
           <div className="section-heading">
-            <span className="eyebrow">Cómo trabajo</span>
-            <h2>Un proceso simple para convertir una necesidad en un producto que se puede mostrar con orgullo.</h2>
+            <span className="eyebrow">Proyectos realizados</span>
+            <h2>Siete productos mostrados como experiencia, no como lista tecnica.</h2>
+            <p>
+              Puedes cambiar de imagen con anterior o siguiente, revisar miniaturas compactas y leer una explicacion de cada vista con lenguaje mas cercano.
+            </p>
           </div>
 
-          <div className="process-grid">
-            {process.map((item, index) => (
-              <article className="process-step" key={item}>
-                <span>0{index + 1}</span>
-                <p>{item}</p>
-                <ChevronRight size={18} />
-              </article>
+          <div className="filter-row" role="tablist" aria-label="Filtrar proyectos">
+            {filters.map((filter) => (
+              <button
+                type="button"
+                key={filter.id}
+                className={`filter-chip${activeFilter === filter.id ? ' is-active' : ''}`}
+                onClick={() => setActiveFilter(filter.id)}
+              >
+                {filter.label}
+              </button>
             ))}
+          </div>
+
+          {loadState === 'loading' ? <p className="status-copy">Cargando galeria de proyectos...</p> : null}
+          {loadState === 'error' ? (
+            <p className="status-copy">No se pudo cargar la galeria automaticamente. Ejecuta la sincronizacion de assets e intenta de nuevo.</p>
+          ) : null}
+
+          <div className="projects-list">
+            {filteredProjects.map((project) => (
+              <ProjectCard project={project} key={project.id} />
+            ))}
+          </div>
+        </section>
+
+        <section className="section narrative-section">
+          <div className="narrative-panel">
+            <div>
+              <span className="eyebrow">Lo que diferencia esta version</span>
+              <h2>Menos volumen, mas criterio visual y mas contexto para quien mira.</h2>
+            </div>
+
+            <div className="narrative-list">
+              <p>Los textos ahora son mas compactos para que el ojo vaya primero al producto y no a bloques enormes.</p>
+              <p>Cada proyecto muestra lo que vive el usuario en pantalla: comprar, gestionar, pedir un viaje o controlar una operacion.</p>
+              <p>Las interfaces largas de Android y Apple se presentan dentro de un visor tipo dispositivo, mientras que los sistemas web usan un escenario panoramico.</p>
+            </div>
           </div>
         </section>
 
@@ -334,9 +404,9 @@ function App() {
           <div className="contact-card">
             <div>
               <span className="eyebrow">Contacto directo</span>
-              <h2>Si quieres un producto serio, atractivo y listo para representar tu negocio, conversemos.</h2>
+              <h2>Si quieres mostrar tu negocio con una experiencia igual de clara y elegante, conversemos.</h2>
               <p>
-                Estoy disponible para construir landing pages, sistemas administrativos, e-commerce, apps móviles y soluciones personalizadas.
+                Desarrollo experiencias web, apps moviles y sistemas de gestion con una presentacion cuidada y pensada para personas reales.
               </p>
             </div>
 
