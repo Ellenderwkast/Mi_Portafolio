@@ -59,6 +59,8 @@ function ProjectCard({ project }) {
   const touchEnd = useRef(0);
   const slides = project.slides ?? [];
   const currentSlide = slides[activeSlide] ?? null;
+  const previousSlide = slides[(activeSlide - 1 + slides.length) % slides.length] ?? null;
+  const nextSlide = slides[(activeSlide + 1) % slides.length] ?? null;
 
   useEffect(() => {
     setActiveSlide(0);
@@ -155,26 +157,54 @@ function ProjectCard({ project }) {
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
-          <div className={`frame-shell frame-shell--${project.frame}`}>
+          {previousSlide ? (
+            <button
+              type="button"
+              className={`frame-peek frame-peek--left frame-peek--${project.frame}`}
+              onClick={goToPrevious}
+              aria-label={`Ir a la imagen anterior de ${project.title}`}
+            >
+              <div className={`frame-shell frame-shell--${project.frame}`}>
+                <img src={previousSlide.src} alt="" aria-hidden="true" />
+              </div>
+            </button>
+          ) : null}
+
+          <div className={`frame-shell frame-shell--${project.frame} frame-shell--current`} key={currentSlide.id}>
             <img src={currentSlide.src} alt={`${project.title} - ${currentSlide.title}`} />
           </div>
+
+          {nextSlide ? (
+            <button
+              type="button"
+              className={`frame-peek frame-peek--right frame-peek--${project.frame}`}
+              onClick={goToNext}
+              aria-label={`Ir a la imagen siguiente de ${project.title}`}
+            >
+              <div className={`frame-shell frame-shell--${project.frame}`}>
+                <img src={nextSlide.src} alt="" aria-hidden="true" />
+              </div>
+            </button>
+          ) : null}
         </div>
 
-        <div className="thumb-strip" aria-label={`Miniaturas del proyecto ${project.title}`}>
+        <div className="viewer-footer">
+          <div className="viewer-slide-copy">
+            <strong>{currentSlide.title}</strong>
+            <span>Desliza o usa las flechas para seguir viendo el proyecto.</span>
+          </div>
+
+          <div className="viewer-dots" aria-label={`Progreso del proyecto ${project.title}`}>
           {slides.map((slide, index) => (
             <button
               type="button"
               key={slide.id}
-              className={`thumb-button${index === activeSlide ? ' is-active' : ''}`}
+              className={`viewer-dot${index === activeSlide ? ' is-active' : ''}`}
               onClick={() => setActiveSlide(index)}
               aria-label={`Ver ${slide.title}`}
-            >
-              <span className={`thumb-frame thumb-frame--${project.frame}`}>
-                <img src={slide.src} alt="" aria-hidden="true" />
-              </span>
-              <span className="thumb-title">{slide.title}</span>
-            </button>
+            />
           ))}
+          </div>
         </div>
       </div>
     </article>
@@ -276,7 +306,7 @@ function App() {
               Diseno de productos que se sienten reales
             </span>
 
-            <h1>Portafolio visual de productos web y moviles hechos para vender, organizar y mover negocios de verdad.</h1>
+            <h1>Productos web y moviles pensados para vender mejor, organizar procesos y verse realmente profesionales.</h1>
 
             <p className="hero-description">
               Soy Ellender Dev. Aqui no solo se ve codigo: se ve como cada proyecto ayuda a una persona a comprar,
@@ -333,7 +363,7 @@ function App() {
         <section className="section studio-section" id="estudio">
           <div className="section-heading compact">
             <span className="eyebrow">Como se presenta el trabajo</span>
-            <h2>Un portafolio mas editorial, compacto y claro para que la calidad visual no se pierda entre textos grandes.</h2>
+            <h2>Un portafolio mas limpio y elegante, donde el producto pesa mas que los textos.</h2>
           </div>
 
           <div className="studio-grid">
@@ -356,9 +386,9 @@ function App() {
         <section className="section" id="proyectos">
           <div className="section-heading">
             <span className="eyebrow">Proyectos realizados</span>
-            <h2>Siete productos mostrados como experiencia, no como lista tecnica.</h2>
+            <h2>Siete productos mostrados uno por uno, con recorrido visual y contexto claro.</h2>
             <p>
-              Puedes cambiar de imagen con anterior o siguiente, revisar miniaturas compactas y leer una explicacion de cada vista con lenguaje mas cercano.
+              Cada proyecto avanza pantalla por pantalla con una presentacion mas sobria y guiada.
             </p>
           </div>
 
