@@ -121,7 +121,7 @@ const PROJECTS_CONFIG = {
     summary: 'Sistema para operacion diaria de gimnasios.',
     outcome: 'Procesos internos mas consistentes y medibles.',
     highlights: ['Clientes y membresias', 'Cobros y caja', 'Control de acceso', 'Comunicacion'],
-    liveUrl: 'https://github.com/Ellenderwkast',
+    liveUrl: 'https://crm-gym-six.vercel.app/',
     preferredOrder: ['dashboard', 'dahboard', 'gestion de clientes', 'membresias', 'pago y caja', 'control de acceso', 'comunicacion', 'login'],
   },
 };
