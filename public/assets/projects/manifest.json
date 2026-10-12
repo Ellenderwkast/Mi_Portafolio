@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T02:27:23.533Z",
+  "generatedAt": "2026-10-12T02:31:55.256Z",
   "profileImage": "/assets/profile/mi-imagen.jpeg",
   "projects": [
     {
@@ -11,7 +11,7 @@
       "segmentLabel": "Venta digital",
       "frame": "desktop",
       "shortSummary": "Compra, pago y gestion en una sola experiencia.",
-      "summary": "Tienda enfocada en conversion y administracion clara de pedidos.",
+      "summary": "Tienda pensada para vender con claridad, convertir más visitas en pedidos y facilitar la gestión de productos, pagos y entregas de forma muy práctica.",
       "outcome": "Flujo de compra mas claro y gestion comercial ordenada.",
       "highlights": [
         "Catalogo visual",
@@ -164,7 +164,7 @@
       "segmentLabel": "Apps y plataformas",
       "frame": "mobile",
       "shortSummary": "Servicios cercanos, chat y pagos desde Android.",
-      "summary": "Marketplace local para descubrir, pedir y pagar servicios.",
+      "summary": "Marketplace local pensado para encontrar servicios confiables cerca del usuario, con una experiencia sencilla para pedir, hablar y pagar sin frustraciones.",
       "outcome": "Experiencia de uso directa para compra y coordinacion.",
       "highlights": [
         "Home por categorias",
@@ -275,7 +275,7 @@
       "segmentLabel": "Apps y plataformas",
       "frame": "mobile",
       "shortSummary": "Servicios locales y compras en iPhone.",
-      "summary": "Version iOS de Open con enfoque en fluidez y claridad.",
+      "summary": "Versión iOS de Open enfocada en fluidez, claridad visual y rapidez al momento de descubrir servicios, coordinar pedidos y completar pagos desde el celular.",
       "outcome": "Navegacion premium para uso diario.",
       "highlights": [
         "Home y menu",
@@ -379,7 +379,7 @@
       "segmentLabel": "Gestion y operacion",
       "frame": "desktop",
       "shortSummary": "Inventario, clientes y reportes en control.",
-      "summary": "Herramienta para stock, clientes y proveedores.",
+      "summary": "Sistema para controlar stock, clientes, proveedores y reportes en un solo lugar, ayudando a organizar la operación diaria del negocio con mayor orden y visibilidad.",
       "outcome": "Operacion comercial mas estable y visible.",
       "highlights": [
         "Dashboard",
@@ -501,7 +501,7 @@
       "segmentLabel": "Movilidad y reservas",
       "frame": "mobile",
       "shortSummary": "Solicitar viaje y seguir ruta en tiempo real.",
-      "summary": "App para pedir transporte con flujo guiado.",
+      "summary": "Aplicación para pedir transporte con mayor confianza, visualizar rutas y completar cada viaje con una experiencia clara, directa y fácil de usar desde Android.",
       "outcome": "Viajes mas claros desde el primer paso.",
       "highlights": [
         "Mapa en vivo",
@@ -603,7 +603,7 @@
       "segmentLabel": "Movilidad y reservas",
       "frame": "mobile",
       "shortSummary": "Reserva y seguimiento de viaje en iPhone.",
-      "summary": "Version iOS de TumaGo para movilidad urbana.",
+      "summary": "Versión iOS de TumaGo diseñada para una movilidad urbana más fluida, con rutas claras, experiencia premium y un flujo cómodo para reservar y seguir cada servicio.",
       "outcome": "Experiencia agil para trayectos frecuentes.",
       "highlights": [
         "Mapa en vivo",
@@ -705,7 +705,7 @@
       "segmentLabel": "Servicios y marca",
       "frame": "desktop",
       "shortSummary": "Presencia digital clara para captar clientes y servicios.",
-      "summary": "Landing page para una empresa de limpieza enfocada en confianza, calidad y contacto directo.",
+      "summary": "Sitio web para una empresa de limpieza que transmite confianza, claridad y rapidez, con una estructura pensada para explicar sus servicios y convertir visitas en contactos reales.",
       "outcome": "Marca mas clara y proceso de contacto mas sencillo para clientes.",
       "highlights": [
         "Home",
@@ -778,7 +778,7 @@
       "segmentLabel": "Movilidad y conductores",
       "frame": "mobile",
       "shortSummary": "Aceptar viajes, gestionar pago y seguir rutas desde Android.",
-      "summary": "Aplicacion para conductores con flujo de viajes, billetera y gestion desde el movil.",
+      "summary": "Aplicación para conductores que facilita aceptar viajes, gestionar su billetera, mantener control de cada servicio y trabajar con mayor organización desde el celular.",
       "outcome": "Operacion del conductor mas clara, rapida y ordenada.",
       "highlights": [
         "Inicio",
@@ -888,7 +888,7 @@
       "segmentLabel": "Movilidad y conductores",
       "frame": "mobile",
       "shortSummary": "Gestion del servicio y viajes desde iPhone con experiencia premium.",
-      "summary": "Version iOS de TumaGo Conductor para aceptar viajes, mover efectivo y gestionar perfil.",
+      "summary": "Versión iOS de TumaGo Conductor creada para que el conductor acepte viajes, supervise su operación y gestione pagos con mayor claridad desde una experiencia premium y fluida.",
       "outcome": "Flujo para conductores mas fluido y adaptable a cada viaje.",
       "highlights": [
         "Inicio",
@@ -998,7 +998,7 @@
       "segmentLabel": "Gestion y operacion",
       "frame": "desktop",
       "shortSummary": "Clientes, membresias y caja en un flujo central.",
-      "summary": "Sistema para operacion diaria de gimnasios.",
+      "summary": "Sistema operativo para gimnasios que centraliza clientes, membresías, caja y seguimiento de actividad para agilizar la gestión del negocio y mantener cada proceso más ordenado.",
       "outcome": "Procesos internos mas consistentes y medibles.",
       "highlights": [
         "Clientes y membresias",
