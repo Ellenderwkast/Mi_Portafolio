@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T03:44:19.824Z",
+  "generatedAt": "2026-10-12T02:19:48.403Z",
   "profileImage": "/assets/profile/mi-imagen.jpeg",
   "projects": [
     {
@@ -697,6 +697,299 @@
       ]
     },
     {
+      "id": "cherry-clean",
+      "title": "Cherry Clean",
+      "tagline": "Limpieza residencial y comercial con presencia digital profesional",
+      "platform": "Sitio web",
+      "segment": "servicios",
+      "segmentLabel": "Servicios y marca",
+      "frame": "desktop",
+      "shortSummary": "Presencia digital clara para captar clientes y servicios.",
+      "summary": "Landing page para una empresa de limpieza enfocada en confianza, calidad y contacto directo.",
+      "outcome": "Marca mas clara y proceso de contacto mas sencillo para clientes.",
+      "highlights": [
+        "Home",
+        "Servicios",
+        "Propuesta de valor",
+        "Contacto"
+      ],
+      "liveUrl": "https://www.cherrycleanllc.com/",
+      "preferredOrder": [
+        "inicio",
+        "servicios",
+        "nosotros",
+        "proceso",
+        "contacto",
+        "galeria",
+        "cotizacion"
+      ],
+      "cover": "/assets/projects/cherry-clean/01-imagen-1.png",
+      "slides": [
+        {
+          "id": "cherry-clean-1",
+          "title": "imagen 1",
+          "explanation": "Vista de Cherry Clean con un paso clave del flujo principal de la aplicacion.",
+          "src": "/assets/projects/cherry-clean/01-imagen-1.png",
+          "frame": "desktop"
+        },
+        {
+          "id": "cherry-clean-2",
+          "title": "imagen 2",
+          "explanation": "Vista de Cherry Clean con un paso clave del flujo principal de la aplicacion.",
+          "src": "/assets/projects/cherry-clean/02-imagen-2.png",
+          "frame": "desktop"
+        },
+        {
+          "id": "cherry-clean-3",
+          "title": "imagen 3",
+          "explanation": "Vista de Cherry Clean con un paso clave del flujo principal de la aplicacion.",
+          "src": "/assets/projects/cherry-clean/03-imagen-3.png",
+          "frame": "desktop"
+        },
+        {
+          "id": "cherry-clean-4",
+          "title": "imagen 4",
+          "explanation": "Vista de Cherry Clean con un paso clave del flujo principal de la aplicacion.",
+          "src": "/assets/projects/cherry-clean/04-imagen-4.png",
+          "frame": "desktop"
+        },
+        {
+          "id": "cherry-clean-5",
+          "title": "imagen 5",
+          "explanation": "Vista de Cherry Clean con un paso clave del flujo principal de la aplicacion.",
+          "src": "/assets/projects/cherry-clean/05-imagen-5.png",
+          "frame": "desktop"
+        },
+        {
+          "id": "cherry-clean-6",
+          "title": "imagen 6",
+          "explanation": "Vista de Cherry Clean con un paso clave del flujo principal de la aplicacion.",
+          "src": "/assets/projects/cherry-clean/06-imagen-6.png",
+          "frame": "desktop"
+        }
+      ]
+    },
+    {
+      "id": "tumago-conductor-android",
+      "title": "TumaGo conductor - Android",
+      "tagline": "Plataforma para conductores de TumaGo en Android",
+      "platform": "App Android",
+      "segment": "movilidad",
+      "segmentLabel": "Movilidad y conductores",
+      "frame": "mobile",
+      "shortSummary": "Aceptar viajes, gestionar pago y seguir rutas desde Android.",
+      "summary": "Aplicacion para conductores con flujo de viajes, billetera y gestion desde el movil.",
+      "outcome": "Operacion del conductor mas clara, rapida y ordenada.",
+      "highlights": [
+        "Inicio",
+        "Solicitud de viaje",
+        "Billetera",
+        "Configuracion",
+        "Modo claro y oscuro"
+      ],
+      "liveUrl": "https://play.google.com/store/apps/details?id=com.TumaGo.conductor&pcampaignid=web_share",
+      "preferredOrder": [
+        "inicio",
+        "login",
+        "solicitud viaje",
+        "billetera",
+        "configuracion",
+        "finalizacion",
+        "modo claro",
+        "modo oscuro"
+      ],
+      "cover": "/assets/projects/tumago-conductor-android/01-inicio-oscuro.png",
+      "slides": [
+        {
+          "id": "tumago-conductor-android-1",
+          "title": "Inicio Oscuro",
+          "explanation": "Vista de inicio pensada para ubicar al usuario desde el primer momento.",
+          "src": "/assets/projects/tumago-conductor-android/01-inicio-oscuro.png",
+          "frame": "mobile"
+        },
+        {
+          "id": "tumago-conductor-android-2",
+          "title": "Inicio Claro",
+          "explanation": "Vista de inicio pensada para ubicar al usuario desde el primer momento.",
+          "src": "/assets/projects/tumago-conductor-android/02-inicio-claro.png",
+          "frame": "mobile"
+        },
+        {
+          "id": "tumago-conductor-android-3",
+          "title": "Login",
+          "explanation": "Acceso seguro para entrar rapido a la aplicacion y continuar el flujo.",
+          "src": "/assets/projects/tumago-conductor-android/03-login.png",
+          "frame": "mobile"
+        },
+        {
+          "id": "tumago-conductor-android-4",
+          "title": "Solicitud viaje Claro",
+          "explanation": "Vista de TumaGo conductor - Android con un paso clave del flujo principal de la aplicacion.",
+          "src": "/assets/projects/tumago-conductor-android/04-solicitud-viaje-claro.png",
+          "frame": "mobile"
+        },
+        {
+          "id": "tumago-conductor-android-5",
+          "title": "Solicitud viaje Oscuro",
+          "explanation": "Vista de TumaGo conductor - Android con un paso clave del flujo principal de la aplicacion.",
+          "src": "/assets/projects/tumago-conductor-android/05-solicitud-viaje-oscuro.png",
+          "frame": "mobile"
+        },
+        {
+          "id": "tumago-conductor-android-6",
+          "title": "Billetera Claro",
+          "explanation": "Vista de TumaGo conductor - Android con un paso clave del flujo principal de la aplicacion.",
+          "src": "/assets/projects/tumago-conductor-android/06-billetera-claro.png",
+          "frame": "mobile"
+        },
+        {
+          "id": "tumago-conductor-android-7",
+          "title": "Billetera Oscuro",
+          "explanation": "Vista de TumaGo conductor - Android con un paso clave del flujo principal de la aplicacion.",
+          "src": "/assets/projects/tumago-conductor-android/07-billetera-oscuro.png",
+          "frame": "mobile"
+        },
+        {
+          "id": "tumago-conductor-android-8",
+          "title": "Configuracion Claro",
+          "explanation": "Vista de TumaGo conductor - Android con un paso clave del flujo principal de la aplicacion.",
+          "src": "/assets/projects/tumago-conductor-android/08-configuracion-claro.png",
+          "frame": "mobile"
+        },
+        {
+          "id": "tumago-conductor-android-9",
+          "title": "Configuracion Oscuro",
+          "explanation": "Vista de TumaGo conductor - Android con un paso clave del flujo principal de la aplicacion.",
+          "src": "/assets/projects/tumago-conductor-android/09-configuracion-oscuro.png",
+          "frame": "mobile"
+        },
+        {
+          "id": "tumago-conductor-android-10",
+          "title": "Finalizacion Claro",
+          "explanation": "Vista de TumaGo conductor - Android con un paso clave del flujo principal de la aplicacion.",
+          "src": "/assets/projects/tumago-conductor-android/10-finalizacion-claro.png",
+          "frame": "mobile"
+        },
+        {
+          "id": "tumago-conductor-android-11",
+          "title": "Finalizacion Oscuro",
+          "explanation": "Vista de TumaGo conductor - Android con un paso clave del flujo principal de la aplicacion.",
+          "src": "/assets/projects/tumago-conductor-android/11-finalizacion-oscuro.png",
+          "frame": "mobile"
+        }
+      ]
+    },
+    {
+      "id": "tumago-conductor-apple",
+      "title": "TumaGo conductor - Apple",
+      "tagline": "Experiencia para conductores de TumaGo en iPhone",
+      "platform": "App iPhone",
+      "segment": "movilidad",
+      "segmentLabel": "Movilidad y conductores",
+      "frame": "mobile",
+      "shortSummary": "Gestion del servicio y viajes desde iPhone con experiencia premium.",
+      "summary": "Version iOS de TumaGo Conductor para aceptar viajes, mover efectivo y gestionar perfil.",
+      "outcome": "Flujo para conductores mas fluido y adaptable a cada viaje.",
+      "highlights": [
+        "Inicio",
+        "Solicitud de viaje",
+        "Billetera",
+        "Configuracion",
+        "Modo claro y oscuro"
+      ],
+      "liveUrl": "https://apps.apple.com/co/app/tumago-conductor/id6798066065?l=en-GB",
+      "preferredOrder": [
+        "inicio",
+        "login",
+        "solicitud viaje",
+        "billetera",
+        "configuracion",
+        "finalizacion",
+        "modo claro",
+        "modo oscuro"
+      ],
+      "cover": "/assets/projects/tumago-conductor-apple/01-inicio-oscuro.jpeg",
+      "slides": [
+        {
+          "id": "tumago-conductor-apple-1",
+          "title": "Inicio Oscuro",
+          "explanation": "Vista de inicio pensada para ubicar al usuario desde el primer momento.",
+          "src": "/assets/projects/tumago-conductor-apple/01-inicio-oscuro.jpeg",
+          "frame": "mobile"
+        },
+        {
+          "id": "tumago-conductor-apple-2",
+          "title": "Inicio Claro",
+          "explanation": "Vista de inicio pensada para ubicar al usuario desde el primer momento.",
+          "src": "/assets/projects/tumago-conductor-apple/02-inicio-claro.jpeg",
+          "frame": "mobile"
+        },
+        {
+          "id": "tumago-conductor-apple-3",
+          "title": "Login",
+          "explanation": "Acceso seguro para entrar rapido a la aplicacion y continuar el flujo.",
+          "src": "/assets/projects/tumago-conductor-apple/03-login.jpeg",
+          "frame": "mobile"
+        },
+        {
+          "id": "tumago-conductor-apple-4",
+          "title": "Solicitud viaje Claro",
+          "explanation": "Vista de TumaGo conductor - Apple con un paso clave del flujo principal de la aplicacion.",
+          "src": "/assets/projects/tumago-conductor-apple/04-solicitud-viaje-claro.jpeg",
+          "frame": "mobile"
+        },
+        {
+          "id": "tumago-conductor-apple-5",
+          "title": "Solicitud viaje Oscuro",
+          "explanation": "Vista de TumaGo conductor - Apple con un paso clave del flujo principal de la aplicacion.",
+          "src": "/assets/projects/tumago-conductor-apple/05-solicitud-viaje-oscuro.jpeg",
+          "frame": "mobile"
+        },
+        {
+          "id": "tumago-conductor-apple-6",
+          "title": "Billetera Claro",
+          "explanation": "Vista de TumaGo conductor - Apple con un paso clave del flujo principal de la aplicacion.",
+          "src": "/assets/projects/tumago-conductor-apple/06-billetera-claro.jpeg",
+          "frame": "mobile"
+        },
+        {
+          "id": "tumago-conductor-apple-7",
+          "title": "Billetera Oscuro",
+          "explanation": "Vista de TumaGo conductor - Apple con un paso clave del flujo principal de la aplicacion.",
+          "src": "/assets/projects/tumago-conductor-apple/07-billetera-oscuro.jpeg",
+          "frame": "mobile"
+        },
+        {
+          "id": "tumago-conductor-apple-8",
+          "title": "Configuracion Claro",
+          "explanation": "Vista de TumaGo conductor - Apple con un paso clave del flujo principal de la aplicacion.",
+          "src": "/assets/projects/tumago-conductor-apple/08-configuracion-claro.jpeg",
+          "frame": "mobile"
+        },
+        {
+          "id": "tumago-conductor-apple-9",
+          "title": "Configuracion Oscuro",
+          "explanation": "Vista de TumaGo conductor - Apple con un paso clave del flujo principal de la aplicacion.",
+          "src": "/assets/projects/tumago-conductor-apple/09-configuracion-oscuro.jpeg",
+          "frame": "mobile"
+        },
+        {
+          "id": "tumago-conductor-apple-10",
+          "title": "Finalizacion Claro",
+          "explanation": "Vista de TumaGo conductor - Apple con un paso clave del flujo principal de la aplicacion.",
+          "src": "/assets/projects/tumago-conductor-apple/10-finalizacion-claro.jpeg",
+          "frame": "mobile"
+        },
+        {
+          "id": "tumago-conductor-apple-11",
+          "title": "Finalizacion Oscuro",
+          "explanation": "Vista de TumaGo conductor - Apple con un paso clave del flujo principal de la aplicacion.",
+          "src": "/assets/projects/tumago-conductor-apple/11-finalizacion-oscuro.jpeg",
+          "frame": "mobile"
+        }
+      ]
+    },
+    {
       "id": "crm-gimnasio",
       "title": "CRM gimnasio",
       "tagline": "Operacion y control para centros fitness",
@@ -713,7 +1006,7 @@
         "Control de acceso",
         "Comunicacion"
       ],
-      "liveUrl": "https://github.com/Ellenderwkast",
+      "liveUrl": "https://crm-gym-six.vercel.app/",
       "preferredOrder": [
         "dashboard",
         "dahboard",
