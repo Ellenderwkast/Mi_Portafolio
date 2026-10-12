@@ -114,6 +114,11 @@ function ProjectCard({ project }) {
           <ExternalLink size={16} />
           Ver proyecto
         </a>
+
+        <div className="project-story">
+          <span className="project-story-label">Resumen</span>
+          <p>{project.summary}</p>
+        </div>
       </div>
 
       <div className="project-viewer">
