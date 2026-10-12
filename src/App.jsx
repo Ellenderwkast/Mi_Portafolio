@@ -35,13 +35,27 @@ const fallbackCatalog = {
 function ProjectCard({ project }) {
   const [activeSlide, setActiveSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [selectedSlide, setSelectedSlide] = useState(null);
   const touchStart = useRef(0);
   const touchEnd = useRef(0);
   const slides = project.slides ?? [];
 
   useEffect(() => {
     setActiveSlide(0);
+    setSelectedSlide(null);
   }, [project.id]);
+
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') {
+        setSelectedSlide(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleEscape);
+
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, []);
 
   useEffect(() => {
     if (slides.length < 2 || isPaused) {
@@ -158,9 +172,15 @@ function ProjectCard({ project }) {
             </button>
           ) : null}
 
-          <div className={`frame-shell frame-shell--${project.frame} frame-shell--current`} key={currentSlide.id}>
+          <button
+            type="button"
+            className={`frame-shell frame-shell--${project.frame} frame-shell--current frame-shell--clickable`}
+            key={currentSlide.id}
+            onClick={() => setSelectedSlide(currentSlide)}
+            aria-label={`Ampliar imagen de ${project.title}: ${currentSlide.title}`}
+          >
             <img src={currentSlide.src} alt={`${project.title} - ${currentSlide.title}`} />
-          </div>
+          </button>
 
           {nextSlide ? (
             <button
@@ -204,6 +224,18 @@ function ProjectCard({ project }) {
           </div>
         </div>
       </div>
+
+      {selectedSlide ? (
+        <div className="image-modal" role="dialog" aria-modal="true" aria-label={`Vista completa de ${selectedSlide.title}`}>
+          <div className="image-modal__backdrop" onClick={() => setSelectedSlide(null)} />
+          <div className="image-modal__panel">
+            <button type="button" className="image-modal__close" onClick={() => setSelectedSlide(null)} aria-label="Cerrar vista ampliada">
+              ×
+            </button>
+            <img src={selectedSlide.src} alt={`${project.title} - ${selectedSlide.title}`} />
+          </div>
+        </div>
+      ) : null}
     </article>
   );
 }
